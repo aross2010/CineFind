@@ -54,17 +54,17 @@ export default function Game() {
     try {
       if (mode === 'easy') {
         const film = await axios.get(
-          `http://localhost:2000/game/easy/${user._id}`
+          `cinefindapi.vercel.app/game/easy/${user._id}`
         )
         navigate(`/game/${film.data.filmID}`)
       } else if (mode === 'medium') {
         const film = await axios.get(
-          `http://localhost:2000/game/medium/${user._id}`
+          `cinefindapi.vercel.app/game/medium/${user._id}`
         )
         navigate(`/game/${film.data.filmID}`)
       } else if (mode === 'hard') {
         const film = await axios.get(
-          `http://localhost:2000/game/hard/${user._id}`
+          `cinefindapi.vercel.app/game/hard/${user._id}`
         )
         navigate(`/game/${film.data.filmID}`)
       }
@@ -105,7 +105,7 @@ export default function Game() {
         isWin,
       }
       const res = await axios.put(
-        `http://localhost:2000/game/${user._id}`,
+        `cinefindapi.vercel.app/game/${user._id}`,
         game
       )
     } catch (e) {
@@ -124,7 +124,7 @@ export default function Game() {
     const fetchUserGameDetails = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:2000/user/${user.name}`
+          `cinefindapi.vercel.app/user/${user.name}`
         )
 
         // check if user has played this film already

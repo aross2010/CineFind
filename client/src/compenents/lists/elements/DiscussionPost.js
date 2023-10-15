@@ -52,7 +52,7 @@ export default function DiscussionPost({
     setLoading(true)
     try {
       const like = await axios.put(
-        `http://localhost:2000/like/discussion/${discussion._id}`,
+        `cinefindapi.vercel.app/like/discussion/${discussion._id}`,
         {
           userId: user._id,
         }
@@ -63,7 +63,7 @@ export default function DiscussionPost({
         ? `/user/${user.name}`
         : `/film/${discussion.film.tmdbID}`
       const newDiscussions = await axios.get(
-        `http://localhost:2000/discussions${route}`
+        `cinefindapi.vercel.app/discussions${route}`
       )
       setDiscussions(() => {
         return [...newDiscussions.data].sort(discussionSortFunction(sortMethod))

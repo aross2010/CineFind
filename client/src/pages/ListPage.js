@@ -21,7 +21,7 @@ export default function ListPage() {
   const fetchListDetails = async (id) => {
     setLoading(true)
     try {
-      const list = await axios.get(`http://localhost:2000/lists/${id}`)
+      const list = await axios.get(`cinefindapi.vercel.app/lists/${id}`)
       const backdrop = await axios.get(
         `https://api.themoviedb.org/3/movie/${list.data.films[0].tmdbID}?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`
       )

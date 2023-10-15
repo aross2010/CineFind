@@ -17,13 +17,13 @@ export default function useFilmDetailsHook() {
     try {
       const details = await getDetails(id)
       const filmReviews = await axios.get(
-        `http://localhost:2000/reviews/film/${id}`
+        `cinefindapi.vercel.app/reviews/film/${id}`
       )
       const filmDiscussions = await axios.get(
-        `http://localhost:2000/discussions/film/${id}`
+        `cinefindapi.vercel.app/discussions/film/${id}`
       )
       const filmLists = await axios.get(
-        `http://localhost:2000/lists/film/${id}`
+        `cinefindapi.vercel.app/lists/film/${id}`
       )
       setFilm(details)
       setReviews(filmReviews.data)

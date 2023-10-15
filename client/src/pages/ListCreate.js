@@ -39,7 +39,7 @@ export default function ListCreate() {
   useEffect(() => {
     const fetchListDetails = async (id) => {
       setPageLoading(true)
-      const list = await axios.get(`http://localhost:2000/lists/${id}`)
+      const list = await axios.get(`cinefindapi.vercel.app/lists/${id}`)
       setList(list.data)
     }
     if (id) fetchListDetails(id)
@@ -248,7 +248,7 @@ export default function ListCreate() {
     }
 
     try {
-      const postedList = await axios.post('http://localhost:2000/lists', data)
+      const postedList = await axios.post('cinefindapi.vercel.app/lists', data)
       setLoading(false)
       navigate(`/list/${postedList.data._id}`)
       setPopup('List created!', true)
@@ -272,7 +272,7 @@ export default function ListCreate() {
 
     try {
       const updatedList = await axios.put(
-        `http://localhost:2000/lists/${list._id}`,
+        `cinefindapi.vercel.app/lists/${list._id}`,
         data
       )
       setLoading(false)
@@ -290,7 +290,7 @@ export default function ListCreate() {
 
     try {
       const deletedList = await axios.delete(
-        `http://localhost:2000/lists/${list._id}`
+        `cinefindapi.vercel.app/lists/${list._id}`
       )
       setPageLoading(false)
       setPopup('Successfully deleted list!', true)

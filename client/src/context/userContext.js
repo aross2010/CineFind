@@ -9,9 +9,12 @@ export function UserContextProvider({ children }) {
   useEffect(() => {
     const fetchUser = async () => {
       if (!user) {
-        const { data } = await axios.get(`http://localhost:2000/auth/profile`, {
-          withCredentials: true,
-        })
+        const { data } = await axios.get(
+          `cinefindapi.vercel.app/auth/profile`,
+          {
+            withCredentials: true,
+          }
+        )
 
         if (data) setUser(data)
         else setUser(null)
