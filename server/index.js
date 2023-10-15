@@ -43,4 +43,8 @@ app.use('/user', userRoutes)
 
 app.use('/game', gameRoutes)
 
+app.get('/', (req, res) => {
+  res.json('Hello')
+})
+
 app.listen(2000, () => console.log('Server Running...'))
