@@ -21,17 +21,17 @@ export default function GameHub() {
     try {
       if (mode === 'easy') {
         const film = await axios.get(
-          `https://cinefindapiapi.vercel.app/game/easy/${user._id}`
+          `https://cinefindapi.vercel.app/game/easy/${user._id}`
         )
         navigate(`/game/${film.data.filmID}`)
       } else if (mode === 'medium') {
         const film = await axios.get(
-          `https://cinefindapiapi.vercel.app/game/medium/${user._id}`
+          `https://cinefindapi.vercel.app/game/medium/${user._id}`
         )
         navigate(`/game/${film.data.filmID}`)
       } else if (mode === 'hard') {
         const film = await axios.get(
-          `https://cinefindapiapi.vercel.app/game/hard/${user._id}`
+          `https://cinefindapi.vercel.app/game/hard/${user._id}`
         )
         navigate(`/game/${film.data.filmID}`)
       }
@@ -45,7 +45,7 @@ export default function GameHub() {
     const fetchGameData = async () => {
       try {
         const { data } = await axios.get(
-          `https://cinefindapiapi.vercel.app/user/${user.name}`
+          `https://cinefindapi.vercel.app/user/${user.name}`
         )
         setUserData(data)
       } catch (e) {

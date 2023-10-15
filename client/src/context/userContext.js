@@ -10,7 +10,7 @@ export function UserContextProvider({ children }) {
     const fetchUser = async () => {
       if (!user) {
         const { data } = await axios.get(
-          `https://cinefindapiapi.vercel.app/auth/profile`,
+          `https://cinefindapi.vercel.app/auth/profile`,
           {
             withCredentials: true,
           }

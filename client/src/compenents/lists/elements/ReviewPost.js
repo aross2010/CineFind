@@ -70,7 +70,7 @@ export default function ReviewPost({
     setLoading(true)
     try {
       const like = await axios.put(
-        `https://cinefindapiapi.vercel.app/like/review/${review._id}`,
+        `https://cinefindapi.vercel.app/like/review/${review._id}`,
         {
           userId: user._id,
         }
@@ -81,7 +81,7 @@ export default function ReviewPost({
         ? `/user/${user.name}/`
         : `/film/${review.film.tmdbID}/`
       const newReviews = await axios.get(
-        `https://cinefindapiapi.vercel.app/reviews${route}`,
+        `https://cinefindapi.vercel.app/reviews${route}`,
         sortMethod
       )
       setReviews(() => {
