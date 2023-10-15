@@ -15,7 +15,6 @@ export function UserContextProvider({ children }) {
             withCredentials: true,
           }
         )
-
         if (data) setUser(data)
         else setUser(null)
       }

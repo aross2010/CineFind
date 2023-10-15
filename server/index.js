@@ -22,7 +22,7 @@ app.use(cookieParser())
 app.use(
   cors({
     credentials: true,
-    origin: ['https://cinefindapi.vercel.app'],
+    origin: ['https://cinefind.vercel.app'],
   })
 )
 
