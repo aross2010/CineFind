@@ -5,14 +5,16 @@ const fetchDetails = async (id) => {
   const details = await getDetails(id)
   setFilm(details)
   const filmReviews = await axios.get(
-    `cinefindapi.vercel.app/reviews/film/${id}`
+    `chttps://cinefind.vercel.app//reviews/film/${id}`
   )
   setReviews(filmReviews.data)
   const filmDiscussions = await axios.get(
-    `cinefindapi.vercel.app/discussions/film/${id}`
+    `chttps://cinefind.vercel.app//discussions/film/${id}`
   )
   setDiscussions(filmDiscussions.data)
-  const filmLists = await axios.get(`cinefindapi.vercel.app/lists/film/${id}`)
+  const filmLists = await axios.get(
+    `chttps://cinefind.vercel.app//lists/film/${id}`
+  )
   setLists(filmLists.data)
 
   // fetch reviews, discussions, lists

@@ -53,9 +53,13 @@ export default function LogIn() {
         username: username.value,
         password: password.value,
       }
-      const res = await axios.post('cinefindapi.vercel.app/auth/login', user, {
-        withCredentials: true,
-      })
+      const res = await axios.post(
+        'chttps://cinefind.vercel.app//auth/login',
+        user,
+        {
+          withCredentials: true,
+        }
+      )
       setData({
         username: {
           value: '',
@@ -66,9 +70,12 @@ export default function LogIn() {
           isValid: null,
         },
       })
-      const { data } = await axios.get(`cinefindapi.vercel.app/auth/profile`, {
-        withCredentials: true,
-      })
+      const { data } = await axios.get(
+        `chttps://cinefind.vercel.app//auth/profile`,
+        {
+          withCredentials: true,
+        }
+      )
       setUser(data)
       navigate(-1) // navigate to previous page
       setPopup(`Welcome back, ${res.data.username}!`, true)

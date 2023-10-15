@@ -22,7 +22,7 @@ app.use(cookieParser())
 app.use(
   cors({
     credentials: true,
-    origin: ['https://cinefind.vercel.app'],
+    origin: ['http://localhost:3000'],
   })
 )
 

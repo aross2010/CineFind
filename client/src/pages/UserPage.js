@@ -34,27 +34,27 @@ export default function UserPage() {
     setLoading(true)
     try {
       const userReviews = await axios.get(
-        `cinefindapi.vercel.app/reviews/user/${name}`
+        `chttps://cinefind.vercel.app//reviews/user/${name}`
       )
       setReviews(userReviews.data)
 
       const userDiscussions = await axios.get(
-        `cinefindapi.vercel.app/discussions/user/${name}`
+        `chttps://cinefind.vercel.app//discussions/user/${name}`
       )
       setDiscussions(userDiscussions.data)
       if (name === user.name) {
         const userLists = await axios.get(
-          `cinefindapi.vercel.app/lists/user/${name}/own`
+          `chttps://cinefind.vercel.app//lists/user/${name}/own`
         )
         setLists(userLists.data)
       } else {
         const userLists = await axios.get(
-          `cinefindapi.vercel.app/lists/user/${name}`
+          `chttps://cinefind.vercel.app//lists/user/${name}`
         )
         setLists(userLists.data)
       }
 
-      const res = await axios.get(`cinefindapi.vercel.app/user/${name}`)
+      const res = await axios.get(`chttps://cinefind.vercel.app//user/${name}`)
       setUserData(res.data)
 
       let ratings = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]

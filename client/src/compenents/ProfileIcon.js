@@ -32,9 +32,12 @@ export default function ProfileIcon() {
   })
 
   const handleLogout = async () => {
-    const { data } = await axios.get(`cinefindapi.vercel.app/auth/logout`, {
-      withCredentials: true,
-    })
+    const { data } = await axios.get(
+      `chttps://cinefind.vercel.app//auth/logout`,
+      {
+        withCredentials: true,
+      }
+    )
     setPopup(`Goodbye, ${user.name}!`, true)
     navigate('/')
     setUser(data)
