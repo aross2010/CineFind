@@ -1,0 +1,403 @@
+.game-page {
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 650px) {
+  .game-page {
+    padding: 0 1.5rem;
+  }
+}
+.game-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.game-poster-wrapper {
+  width: 100%;
+  aspect-ratio: 2/3;
+  overflow: hidden;
+  border-radius: var(--rounded-square);
+  border: 1px solid var(--third-dark);
+}
+
+.unknown-name {
+  letter-spacing: 0.35rem;
+}
+
+.game-poster {
+  border-radius: var(--rounded-square);
+  width: 100%;
+}
+
+.game-poster.zero {
+  filter: blur(90px);
+}
+.game-poster.one {
+  filter: blur(80px);
+}
+.game-poster.two {
+  filter: blur(70px);
+}
+.game-poster.three {
+  filter: blur(60px);
+}
+.game-poster.four {
+  filter: blur(50px);
+}
+.game-poster.five {
+  filter: blur(40px);
+}
+
+.game-left-col {
+  width: 40%;
+  text-align: left;
+}
+
+.game-right-col {
+  width: 60%;
+  padding-left: 2rem;
+  height: 100%;
+}
+
+.game-info-container {
+  border-radius: 0.15rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+
+.how-to-play-container {
+  background-color: var(--alt-dark);
+  border-radius: var(--rounded-square);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 4rem;
+  border: none;
+  color: inherit;
+}
+
+.how-to-play-title {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.question-modal-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.question-modal-container ul {
+  padding-left: 1rem;
+  list-style-type: circle;
+  font-weight: 400;
+  color: var(--grey-text);
+}
+
+.text-input-container {
+  width: 100%;
+  display: flex;
+}
+
+.game-genres-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.game-genres-container.info-text {
+  margin-bottom: 0;
+}
+
+.game-genre {
+  display: flex;
+  justify-content: center;
+  padding: 0.35rem 1rem;
+  margin: 0;
+  border-radius: 1.5rem;
+  background-color: var(--secondary-dark);
+  font-size: 0.75rem;
+}
+
+.text-input-container {
+  position: relative;
+}
+
+.guessed-films-container {
+  width: 50%;
+  border-radius: var(--rounded-square);
+}
+
+.guessed-films-header {
+  font-weight: 400;
+  color: var(--secondary-text);
+  margin-bottom: 1rem;
+}
+
+.guessed-list {
+  font-weight: 300;
+  font-size: 1.1rem;
+  font-family: 'Merriweather', serif;
+  padding-left: 1.5rem;
+}
+
+.guessed-poster {
+  height: 80%;
+  width: auto;
+  margin-left: 1rem;
+}
+
+.guessed-list li {
+  padding: 0.5rem 0;
+}
+
+.game-cast-list-container {
+  border-radius: 0.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+  padding: 2rem 2rem;
+  border: 1px solid var(--blue-dark);
+}
+
+.game-cast-list-container-header h5 {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 0;
+  padding-bottom: 0.25rem;
+  border-bottom: 0.5px solid var(--blue-dark);
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 0.95rem;
+  color: var(--grey-text);
+}
+
+.game-cast-member-container {
+  display: flex;
+  align-items: center;
+}
+
+.game-cast-gender {
+  margin-left: auto;
+  width: 5%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.post-game-message-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.post-game-message {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.post-game-title {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.post-game-message-container button {
+  min-width: 8rem;
+}
+
+.new-game-btn-txt {
+  color: var(--primary-alt);
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+
+.modal-btn {
+  outline: none;
+  border: none;
+  color: inherit;
+  background-color: var(--third-dark);
+  padding: 0.5rem 1rem;
+  border-radius: var(--rounded-square);
+  font-size: 0.9rem;
+  transition: filter 200ms ease-in-out;
+}
+
+.modal-btn:hover {
+  filter: brightness(1.4);
+}
+
+.match {
+  color: var(--green-alt);
+}
+
+.no-match {
+  color: var(--red-alt);
+}
+
+.guessed-film {
+  padding-bottom: 2px;
+}
+
+.preview-title.semi-match {
+  color: var(--yellow-alt);
+}
+
+.preview-title.no-match {
+  color: var(--red-alt);
+}
+
+.preview-title.match {
+  color: var(--green-alt);
+}
+
+.game-cast-member-container .match {
+  font-weight: 400;
+}
+
+.game-genre.match {
+  background-color: var(--green-alt);
+  color: var(--primary-dark);
+}
+
+.game-genre.no-match {
+  background-color: var(--red-alt);
+  color: var(--primary-dark);
+}
+
+.game-hub-page {
+  margin-top: 3rem;
+}
+
+.game-hub-header {
+  text-align: center;
+}
+
+.game-hub-header h3 {
+  font-weight: 300;
+  font-size: 2.55rem;
+  margin-bottom: 1rem;
+}
+
+.game-hub-header p {
+  font-weight: 400;
+  margin-bottom: 3rem;
+}
+
+.game-cards-container {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  width: 100%;
+  height: min-content;
+  margin-top: 1rem;
+}
+
+.difficulty-card {
+  /* background-color: var(--secondary-dark); */
+  border: 1px solid var(--blue-dark);
+  border-radius: var(--rounded-square);
+  padding: 2rem;
+  height: 30rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.difficulty-card h5 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+}
+
+.difficulty-card p {
+  text-align: center;
+  padding: 0 1.5rem;
+  font-weight: 400;
+  margin-bottom: 3rem;
+}
+
+.card-icon {
+  font-size: 7rem;
+  margin-bottom: 4rem;
+}
+
+.card-btn {
+  border: none;
+  outline: none;
+  font-weight: 300;
+  border-radius: var(--rounded-square);
+  border: 1px solid var(--blue-dark);
+  background-color: transparent;
+  color: var(--primary-text);
+  padding: 0.75rem 0rem;
+  width: 100%;
+  max-width: 10rem;
+  transition: filter 200ms ease-in-out;
+
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
+.card-btn:hover {
+  filter: brightness(2);
+}
+
+.user-scores {
+  font-weight: 400;
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+  .game-hub-page {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .game-cards-container {
+    flex-direction: column;
+  }
+}
+
+.game-container .info-text {
+  font-size: 1rem;
+}
+
+@media (max-width: 1175px) {
+  .game-hub-page {
+    padding: 0 1.5rem;
+  }
+}

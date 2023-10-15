@@ -1,0 +1,181 @@
+.user-view-container {
+  position: relative;
+  padding: 0 10%;
+  margin-top: -45px;
+}
+
+.user-view-avatar {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  height: 4.5rem;
+  border: 1px solid var(--alt-dark);
+}
+
+.user-view-username {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  display: block;
+  color: var(--secondary-text);
+}
+
+.user-data-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.user-data-container section {
+  margin-top: 3rem;
+  display: flex;
+  gap: 8rem;
+}
+
+.data-type {
+  width: 50%;
+}
+
+.ratings-graph-container {
+  height: 8rem;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.ratings-graph-container .stars {
+  margin: 0;
+  line-height: 1;
+  color: var(--primary-alt);
+  font-size: 0.7rem;
+}
+
+.graph-bars-container {
+  display: flex;
+  align-items: end;
+  gap: 0.085rem;
+  height: 6rem;
+  width: 100%;
+}
+
+.graph-bar-wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  align-items: end;
+}
+
+.graph-bar-wrapper:hover {
+  filter: brightness(1.5);
+}
+
+.graph-bar {
+  width: 100%;
+  max-height: 100%;
+  min-height: 0.25%;
+  background-color: var(--alt-dark);
+  border-top-left-radius: 0.15rem;
+  border-top-right-radius: 0.15rem;
+}
+
+.graph-bar.hover {
+  filter: brightness(1.5);
+}
+
+.average-rating-display {
+  display: flex;
+  flex-direction: column;
+}
+
+.average-rating {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-size: 1.35rem;
+}
+
+.cineq-stats-container {
+  height: 8rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.progress-container span {
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--grey-text);
+}
+
+.section-header.link:hover {
+  color: var(--primary-alt);
+}
+
+.user-view-poster {
+  aspect-ratio: 2/3;
+  border: 1px solid var(--alt-dark);
+  border: 0.15rem;
+  width: 8rem;
+}
+
+.user-view-review {
+  margin-top: 0;
+}
+
+.data-type {
+  width: 50%;
+}
+
+@media (max-width: 1175px) {
+  .user-view-container,
+  .list-view-container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .backdrop-img.alt {
+    height: 300px;
+  }
+
+  .filter.alt {
+    height: 350px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .user-data-container section {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .data-type {
+    width: 100%;
+  }
+
+  .cineq-stats-container {
+    padding: 0 2rem;
+  }
+
+  .review-container.user,
+  .discussion-container.user,
+  .list-preview-container.user {
+    padding: 1.5rem 0;
+  }
+
+  .review-poster,
+  .discussion-poster {
+    width: 5rem;
+  }
+}

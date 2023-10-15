@@ -1,0 +1,133 @@
+.discussion-container {
+  border-radius: 0.15rem;
+  background-color: transparent;
+  border-bottom: 1px solid var(--alt-dark);
+  padding: 1rem 3em 1rem 0.5rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.discussion-container.details {
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.discussion-poster {
+  width: 7rem;
+  aspect-ratio: 2/3;
+  border-radius: 0.15rem;
+}
+
+.discussion-film-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--secondary-text);
+}
+
+.discussion-film-year {
+  font-size: 1.15rem;
+  font-weight: 300;
+  color: var(--grey-text);
+  margin-left: 0.25rem;
+}
+
+.discussion-title {
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: var(--secondary-text);
+  padding-top: 1rem;
+  margin-bottom: 0;
+}
+
+.discussion-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.95rem;
+}
+
+.comments-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 1.5rem;
+  border-top: 0.5px solid var(--alt-dark);
+}
+
+.comments-container.details {
+  border-top: none;
+  padding-top: 0;
+  padding-left: 1rem;
+}
+
+.comment {
+  /* background-color: #1b2026; */
+  border-left: 3px solid var(--alt-dark);
+
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.profile-pic.comment-avatar {
+  width: 2rem;
+}
+
+.comment-username {
+  font-weight: 400;
+  font-size: 0.85rem;
+}
+
+.comment-time-stamp {
+  color: var(--grey-text);
+  font-size: 0.8rem;
+}
+
+.comment-body {
+  margin-bottom: 0;
+}
+
+.add-comment {
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: var(--grey-text);
+  cursor: pointer;
+  transition: color 200ms ease-in-out;
+  margin-top: 0.25rem;
+}
+
+.add-comment:hover {
+  color: var(--primary-alt);
+}
+
+.comments-icon {
+  margin-right: 0.5rem;
+}
+
+.comment-form-container {
+  gap: 1rem;
+  width: 100%;
+  height: 100%;
+}
+
+.comment-form-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.comment-form-header {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--grey-text);
+  margin-bottom: 0.75rem;
+}
+
+.comment-form-text {
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}

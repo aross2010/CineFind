@@ -1,0 +1,77 @@
+.user-input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  background-color: var(--alt-dark);
+  border-radius: 0.15rem;
+  padding: 0.65rem 0.75rem;
+  color: var(--secondary-text);
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+.text-input-dropdown-menu {
+  z-index: 5;
+  border-radius: var(--rounded-square);
+  border: 1px solid var(--alt-dark);
+  height: auto;
+  margin-top: 3px;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  user-select: none;
+  display: block;
+  padding: 0.5rem;
+  background-color: var(--alt-dark);
+}
+
+.text-input-dropdown-option {
+  font-size: 0.85rem;
+  background-color: var(--alt-dark);
+  border-radius: var(--rounded-square);
+  padding: 0.75rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  transition: filter 150ms ease-in-out;
+}
+
+.text-input-dropdown-option.selected {
+  filter: brightness(1.4);
+}
+
+/* .login-form-container .user-input::placeholder {
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  font-size: 0.8rem;
+}
+
+.login-form-container .user-input {
+  padding: 0;
+
+  padding-left: 2px;
+
+  color: var(--primary-text);
+  font-weight: 300;
+}
+
+.login-form-container .text-input-dropdown-menu {
+  border: 0.5px solid var(--third-dark);
+  background-color: var(--third-dark);
+}
+
+.login-form-container .text-input-dropdown-option {
+  background-color: var(--third-dark);
+}
+
+.login-form-container .text-input-container {
+  padding-right: 0;
+}
+
+.login-form-container .user-input {
+  background-color: var(--secondary-dark);
+} */

@@ -1,0 +1,120 @@
+.dropdown-container-custom {
+  position: relative;
+  user-select: none;
+  height: 100%;
+}
+
+.dropdown-header-custom {
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: auto;
+  font-weight: 300;
+  font-size: 0.85rem;
+  background-color: var(--alt-dark);
+  color: inherit;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--rounded-square);
+}
+
+.dropdown-menu-custom {
+  border-radius: 0.15rem;
+  margin-top: 2px;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 6rem;
+  user-select: none;
+  display: block;
+  background-color: var(--alt-dark);
+  padding: 0.5rem 0.25rem;
+  border: 1px solid var(--secondary-dark);
+}
+
+.dropdown-menu-header-custom {
+  color: #babdc0;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding-left: 0.5rem;
+  width: 100%;
+}
+
+.dropdown-options-container {
+  margin-top: 0.5rem;
+}
+
+.dropdown-option {
+  font-size: 0.8rem;
+  background-color: var(--alt-dark);
+  color: var(--primary-text);
+  border-radius: 0.35rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: filter 200ms ease-in-out;
+}
+
+.dropdown-option-selected {
+  color: var(--primary-alt);
+}
+
+.dropdown-option:hover {
+  filter: brightness(1.4);
+}
+
+.chevron-down {
+  transition: transform 0.2s ease;
+}
+
+.chevron-down.rotated {
+  transform: rotate(-180deg);
+}
+
+.dropdown-container-custom.alt {
+  position: relative;
+  margin-left: auto;
+  margin-bottom: -1px;
+  height: min-content;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dropdown-container-custom.alt .dropdown-header-custom {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  filter: none;
+}
+
+.dropdown-container-custom.alt .dropdown-menu-custom {
+  background-color: var(--blue-dark);
+  border: none;
+}
+
+.dropdown-container-custom.alt .dropdown-option {
+  background-color: var(--blue-dark);
+}
+
+.dropdown-container-custom.alt .dropdown-header-custom {
+  font-size: 0.8rem;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  color: var(--grey-text);
+  gap: 0.5rem;
+  margin-right: 0;
+}
+
+.dropdown-container-custom.alt .dropdown-option {
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 300;
+}

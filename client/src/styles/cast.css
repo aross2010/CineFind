@@ -1,0 +1,138 @@
+.cast-page-container {
+  margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  height: fit-content;
+}
+
+.profile-col {
+  width: 22.5%;
+}
+
+.bio-col {
+  padding-left: 3rem;
+  width: 77.25%;
+}
+
+.person-name {
+  margin-bottom: 2rem;
+}
+
+.person-picture,
+.person-no-picture {
+  width: 100%;
+  border-radius: var(--rounded-square);
+  border: 1px solid var(--third-dark);
+  margin-bottom: 1.5rem;
+}
+
+.person-no-picture {
+  aspect-ratio: 2/3;
+  background-color: var(--secondary-dark);
+  font-weight: 400;
+  padding: 0 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.person-films-container {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0rem, 1fr));
+  gap: 0.75rem;
+  justify-items: center;
+}
+
+.job-header {
+  font-size: 1rem;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 1rem 0;
+  padding-bottom: 0.25rem;
+  border-bottom: 0.5px solid #2b2f34;
+  color: var(--secondary-text);
+}
+
+.person-bio {
+  font-size: 0.95rem;
+  white-space: pre-line;
+}
+
+.bio-paragraph {
+  font-family: 'Merriweather', serif;
+  font-size: 0.95rem;
+}
+
+.bio-paragraph:last-of-type {
+  margin-bottom: 0;
+}
+
+.person-name {
+  font-size: 2rem;
+  color: var(--secondary-text);
+  font-weight: 600;
+}
+
+.bio-wrapper {
+  margin-bottom: 2rem;
+}
+
+.bio-header {
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.filmography-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.5px solid var(--third-dark);
+  padding-bottom: 2rem;
+}
+
+.job-title {
+  font-size: 1.05rem;
+  font-weight: 300;
+  margin-bottom: 0;
+  font-family: 'Merriweather', serif;
+}
+
+.additional-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.info-header {
+  margin-bottom: 0.25rem;
+  font-weight: 400;
+  color: var(--primary-text);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.info-text {
+  font-weight: 300;
+  font-size: 0.95rem;
+  color: var(--grey-text);
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .cast-page-container {
+    margin-top: 2rem;
+    flex-direction: column;
+  }
+
+  .person-films-container {
+    grid-template-columns: repeat(4, minmax(0rem, 1fr));
+    gap: 0.5rem;
+  }
+
+  .job-title {
+    font-size: 0.95rem;
+  }
+}

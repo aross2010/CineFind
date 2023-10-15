@@ -1,0 +1,51 @@
+.switchable-container {
+  width: 100%;
+}
+
+.switchable-header-container {
+  border-bottom: 1px solid var(--alt-dark);
+  align-items: flex-start;
+  display: flex;
+  margin-bottom: -0.25rem;
+  user-select: none;
+  margin-bottom: 0.75rem;
+  gap: 1.5rem;
+}
+
+.switchable-header {
+  font-weight: 400;
+  margin-bottom: -1px;
+  padding-bottom: 0.25rem;
+
+  font-size: 0.95rem;
+  color: var(--grey-text);
+  cursor: pointer;
+}
+
+.switchable-header.selected {
+  border-bottom: 1px solid var(--primary-alt);
+  color: var(--primary-alt);
+}
+
+.switchable-header:not(.selected):hover {
+  border-bottom: 1px solid var(--primary-text);
+  color: var(--primary-text);
+}
+
+.selected-switchable-icon {
+  color: var(--primary-alt);
+}
+
+.switchable-icon {
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+.switchable-header.sort {
+  font-size: 0.8rem;
+  margin-left: auto;
+}
+
+.switchable-content {
+  max-width: 100%;
+}
