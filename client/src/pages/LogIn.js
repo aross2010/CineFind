@@ -54,7 +54,7 @@ export default function LogIn() {
         password: password.value,
       }
       const res = await axios.post(
-        'https://cinefindapi.vercel.app/auth/login',
+        'https://www.cinefindapi.vercel.app/auth/login',
         user,
         {
           withCredentials: true,
@@ -71,7 +71,7 @@ export default function LogIn() {
         },
       })
       const { data } = await axios.get(
-        `https://cinefindapi.vercel.app/auth/profile`,
+        `https://www.cinefindapi.vercel.app/auth/profile`,
         {
           withCredentials: true,
         }

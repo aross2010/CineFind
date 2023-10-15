@@ -57,12 +57,12 @@ export default function DiscussionForm({
 
     try {
       const postedDiscussion = await axios.post(
-        'https://cinefindapi.vercel.app/discussions',
+        'https://www.cinefindapi.vercel.app/discussions',
         data
       )
       const route = isUserPage ? `/user/${user.name}` : `/film/${id}`
       const newDiscussions = await axios.get(
-        `https://cinefindapi.vercel.app/discussions${route}`
+        `https://www.cinefindapi.vercel.app/discussions${route}`
       )
       setDiscussions(newDiscussions.data)
       setLoading(false)
@@ -89,13 +89,13 @@ export default function DiscussionForm({
 
     try {
       const updatedDiscussion = await axios.put(
-        `https://cinefindapi.vercel.app/discussions/${discussion._id}`,
+        `https://www.cinefindapi.vercel.app/discussions/${discussion._id}`,
         data
       )
 
       const route = isUserPage ? `/user/${user.name}` : `/film/${film.tmdbID}`
       const newDiscussions = await axios.get(
-        `https://cinefindapi.vercel.app/discussions${route}`
+        `https://www.cinefindapi.vercel.app/discussions${route}`
       )
 
       setDiscussions(newDiscussions.data)
@@ -114,11 +114,11 @@ export default function DiscussionForm({
     setDeleteWarning(false)
     try {
       const deletedDiscussion = await axios.delete(
-        `https://cinefindapi.vercel.app/discussions/${discussion._id}`
+        `https://www.cinefindapi.vercel.app/discussions/${discussion._id}`
       )
       const route = isUserPage ? `/user/${user.name}` : `/film/${film.tmdbID}`
       const newDiscussions = await axios.get(
-        `https://cinefindapi.vercel.app/discussions${route}`
+        `https://www.cinefindapi.vercel.app/discussions${route}`
       )
 
       setDiscussions(newDiscussions.data)
