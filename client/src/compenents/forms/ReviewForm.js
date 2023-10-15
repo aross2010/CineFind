@@ -57,12 +57,12 @@ export default function ReviewForm({
 
     try {
       const postedReview = await axios.post(
-        'https://www.cinefindapi.vercel.app/reviews',
+        'https://cinefindapi.vercel.app/reviews',
         data
       )
       const route = isUserPage ? `/user/${user.name}` : `/film/${id}`
       const newReviews = await axios.get(
-        `https://www.cinefindapi.vercel.app/reviews${route}`
+        `https://cinefindapi.vercel.app/reviews${route}`
       )
       setReviews(newReviews.data)
       setLoading(false)
@@ -88,13 +88,13 @@ export default function ReviewForm({
 
     try {
       const updatedReview = await axios.put(
-        `https://www.cinefindapi.vercel.app/reviews/${review._id}`,
+        `https://cinefindapi.vercel.app/reviews/${review._id}`,
         data
       )
 
       const route = isUserPage ? `/user/${user.name}` : `/film/${film.tmdbID}`
       const newReviews = await axios.get(
-        `https://www.cinefindapi.vercel.app/reviews${route}`
+        `https://cinefindapi.vercel.app/reviews${route}`
       )
       setReviews(newReviews.data)
       setOpen(false)
@@ -111,11 +111,11 @@ export default function ReviewForm({
     e.preventDefault()
     try {
       const deletedReview = await axios.delete(
-        `https://www.cinefindapi.vercel.app/reviews/${review._id}`
+        `https://cinefindapi.vercel.app/reviews/${review._id}`
       )
       const route = isUserPage ? `/user/${user.name}` : `/film/${film.tmdbID}`
       const newReviews = await axios.get(
-        `https://www.cinefindapi.vercel.app/reviews${route}`
+        `https://cinefindapi.vercel.app/reviews${route}`
       )
       setDeleteWarning(false)
       setReviews(newReviews.data)
