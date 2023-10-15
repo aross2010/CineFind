@@ -40,7 +40,7 @@ export default function CommentForm({
 
     try {
       const postedDiscussion = await axios.post(
-        `chttps://cinefindapi.vercel.app//comments/${discussionToComment._id}`,
+        `https://www.cinefindapi.vercel.app/comments/${discussionToComment._id}`,
         data
       )
       const route = isHomePage
@@ -49,7 +49,7 @@ export default function CommentForm({
         ? `/user/${user.name}`
         : `/film/${discussionToComment.film.tmdbID}`
       const newDiscussions = await axios.get(
-        `chttps://cinefindapi.vercel.app//discussions${route}`
+        `https://www.cinefindapi.vercel.app/discussions${route}`
       )
       setDiscussions(newDiscussions.data)
       setLoading(false)
@@ -73,14 +73,14 @@ export default function CommentForm({
 
     try {
       const updatedComment = await axios.put(
-        `chttps://cinefindapi.vercel.app//comments/${discussionToComment._id}/${comment._id}`,
+        `https://www.cinefindapi.vercel.app/comments/${discussionToComment._id}/${comment._id}`,
         data
       )
       const route = isUserPage
         ? `/user/${user.name}`
         : `/film/${discussionToComment.film.tmdbID}`
       const newDiscussions = await axios.get(
-        `chttps://cinefindapi.vercel.app//discussions${route}`
+        `https://www.cinefindapi.vercel.app/discussions${route}`
       )
       setDiscussions(newDiscussions.data)
       setLoading(false)
@@ -104,13 +104,13 @@ export default function CommentForm({
     setDeleteWarning(false)
     try {
       const deletedComment = await axios.delete(
-        `chttps://cinefindapi.vercel.app//comments/${discussionToComment._id}/${comment._id}`
+        `https://www.cinefindapi.vercel.app/comments/${discussionToComment._id}/${comment._id}`
       )
       const route = isUserPage
         ? `/user/${user.name}`
         : `/film/${discussionToComment.film.tmdbID}`
       const newDiscussions = await axios.get(
-        `chttps://cinefindapi.vercel.app//discussions${route}`
+        `https://www.cinefindapi.vercel.app/discussions${route}`
       )
       setDiscussions(newDiscussions.data)
       setLoading(false)

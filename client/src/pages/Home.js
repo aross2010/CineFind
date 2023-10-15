@@ -25,12 +25,12 @@ function Home() {
   const fetchData = async () => {
     try {
       const reviews = await axios.get(
-        'chttps://cinefindapi.vercel.app//reviews/'
+        'https://www.cinefindapi.vercel.app/reviews/'
       )
       const discussions = await axios.get(
-        'chttps://cinefindapi.vercel.app//discussions'
+        'https://www.cinefindapi.vercel.app/discussions'
       )
-      const lists = await axios.get('chttps://cinefindapi.vercel.app//lists')
+      const lists = await axios.get('https://www.cinefindapi.vercel.app/lists')
       setReviews(reviews.data)
       setDiscussions(discussions.data)
       setLists(lists.data)
