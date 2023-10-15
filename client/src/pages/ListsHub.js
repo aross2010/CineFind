@@ -51,7 +51,7 @@ export default function ListsHub() {
   const fetchLists = async () => {
     try {
       const { data } = await axios.get(
-        'https://www.cinefindapi.vercel.app/lists'
+        'https://cinefindapiapi.vercel.app/lists'
       )
       setLists(data)
     } catch (e) {

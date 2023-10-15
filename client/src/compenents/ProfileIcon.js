@@ -33,7 +33,7 @@ export default function ProfileIcon() {
 
   const handleLogout = async () => {
     const { data } = await axios.get(
-      `https://www.cinefindapi.vercel.app/auth/logout`,
+      `https://cinefindapiapi.vercel.app/auth/logout`,
       {
         withCredentials: true,
       }
