@@ -197,7 +197,7 @@ export default function Register() {
     try {
       // register user
       const registeredUser = await axios.post(
-        'chttps://cinefind.vercel.app//auth/register',
+        'chttps://cinefindapi.vercel.app//auth/register',
         formData,
         {
           headers: {
@@ -208,14 +208,14 @@ export default function Register() {
 
       // hit login & get profile routes
       const loggedInUser = await axios.post(
-        'chttps://cinefind.vercel.app//auth/login',
+        'chttps://cinefindapi.vercel.app//auth/login',
         { username: name.value, password: password.value },
         {
           withCredentials: true,
         }
       )
       const { data } = await axios.get(
-        `chttps://cinefind.vercel.app//auth/profile`,
+        `chttps://cinefindapi.vercel.app//auth/profile`,
         {
           withCredentials: true,
         }

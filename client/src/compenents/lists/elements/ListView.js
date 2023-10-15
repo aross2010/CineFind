@@ -35,7 +35,7 @@ export default function ListView({
     setLoading(true)
     try {
       const like = await axios.put(
-        `chttps://cinefind.vercel.app//like/list/${list._id}`,
+        `chttps://cinefindapi.vercel.app//like/list/${list._id}`,
         {
           userId: user._id,
         }
@@ -51,7 +51,7 @@ export default function ListView({
         : '/'
 
       const newLists = await axios.get(
-        `chttps://cinefind.vercel.app//lists${route}`
+        `chttps://cinefindapi.vercel.app//lists${route}`
       )
       setLists(() => {
         return [...newLists.data].sort(listSortFunction(sortMethod))
