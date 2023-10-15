@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(
   cors({
     credentials: true,
-    origin: ['http://localhost:3000', 'http://10.0.0.243:3000'],
+    origin: ['https://cinefind.vercel.app'],
   })
 )
 
