@@ -50,4 +50,4 @@ app.get('/', (req, res) => {
 
 app.listen(2000, () => console.log('Server Running...'))
 
-export default app
+module.exports = app
