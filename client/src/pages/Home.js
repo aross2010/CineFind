@@ -130,7 +130,12 @@ function Home() {
               padding: '1.25rem 3rem',
             }}
           >
-            Sign up Today!
+            <Link
+              to="/register"
+              className="link-text"
+            >
+              Sign up Today!
+            </Link>
           </button>
         </div>
         <div className="guest-image">
