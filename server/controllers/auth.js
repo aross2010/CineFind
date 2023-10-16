@@ -104,15 +104,15 @@ const getProfile = async (req, res) => {
   const token = req.header('Authorization')
 
   if (!token) {
-    res.status(401).json({ error: 'Unauthorized' })
+    res.status(401).json({ error: 'Unauthorized.' })
   }
 
   try {
     const user = jwt.verify(token, process.env.JWT_SECRET)
     console.log(user)
-    res.json({ user })
+    res.json({ user }, { token })
   } catch (e) {
-    res.json(null)
+    res.status(401).json({ error: 'Unauthorized.' })
   }
 
   // retrieve cookie and user data for front end
