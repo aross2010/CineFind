@@ -20,6 +20,7 @@ app.use(express.json())
 app.use(cookieParser())
 app.use(express.urlencoded({ extended: false }))
 app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin')
   next()
 })
 app.use(
