@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import AppRoutes from './AppRoutes'
-import './styles/styles.css'
+import './styles/style.css'
 import Navbar from './compenents/Navbar'
 import Footer from './compenents/Footer'
 import Popup from './compenents/Popup'
