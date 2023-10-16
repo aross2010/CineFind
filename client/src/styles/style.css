@@ -282,6 +282,7 @@ p {
   margin-left: 0.15rem;
   margin-bottom: 0.25rem;
   font-size: 1.1rem;
+  color: var(--primary-text);
 }
 
 .edit-btn-pencil {

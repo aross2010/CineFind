@@ -27,7 +27,7 @@ const registerUser = async (req, res) => {
           'Password requires 8 characters, one uppercase letter, and one uppercase number.',
       })
     }
-    if (!filmID || !filmBackdrop) {
+    if (filmID === 0 || !filmBackdrop) {
       return res
         .status(400)
         .json({ error: 'Please select a valid favorite film.' })

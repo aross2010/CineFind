@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Backdrop from '../compenents/details/Backdrop'
-import filmList from '../data/lists-data'
-import { Tooltip, usePopper } from '@chakra-ui/react'
+import { Tooltip } from '@chakra-ui/react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { PiPencilSimpleLineDuotone } from 'react-icons/pi'
 import axios from 'axios'
 import Loading from '../compenents/LoadingSpinner'
 import moment from 'moment'
 import usePopupHook from '../hooks/popupHook'
+import { UserContext } from '../context/userContext'
 
 export default function ListPage() {
   const { id } = useParams()
@@ -16,6 +16,7 @@ export default function ListPage() {
   const [backdrop, setBackDrop] = useState(null)
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
+  const { user } = useContext(UserContext)
   const { setPopup } = usePopupHook()
 
   const fetchListDetails = async (id) => {
@@ -91,14 +92,16 @@ export default function ListPage() {
         <div style={{ marginBottom: '1.5rem' }}>
           <h1 className="list-view-name">
             {list.name}{' '}
-            <Link
-              className="link-no-text"
-              to={`/list/edit/${list._id}`}
-              style={{ fontSize: '1rem', marginLeft: '0.5rem' }}
-            >
-              {' '}
-              <PiPencilSimpleLineDuotone />
-            </Link>
+            {user && user.name === list.user.name && (
+              <Link
+                className="link-no-text"
+                to={`/list/edit/${list._id}`}
+                style={{ fontSize: '1rem', marginLeft: '0.5rem' }}
+              >
+                {' '}
+                <PiPencilSimpleLineDuotone />
+              </Link>
+            )}
           </h1>
           <Link
             className="list-view-subheader link-text alt"
