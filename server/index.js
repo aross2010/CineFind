@@ -19,10 +19,13 @@ const gameRoutes = require('./routes/gameRoutes')
 app.use(express.json())
 app.use(cookieParser())
 app.use(express.urlencoded({ extended: false }))
-
+app.use((req, res, next) => {
+  res.setHeader({ 'Access-Control-Allow-Credentials': 'true' })
+  next()
+})
 app.use(
   cors({
-    withCredentials: 'true',
+    withCredentials: true,
     origin: 'https://cinefind.vercel.app',
   })
 )
