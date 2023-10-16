@@ -146,7 +146,7 @@ function parseScore(score) {
 
 async function getOMDBdata(id) {
   const scores = await axios.get(
-    `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}=${id}`
+    `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}=${id}`
   )
 
   let RTScore, IMDBScore, MPAARating
