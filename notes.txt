@@ -1,4 +1,4 @@
-
+-> on logout btn, have loading symbol appear and disable button 
 -> look for other boostrap overrides
 -> homepage no loading modal
 -> switch to web token auth
