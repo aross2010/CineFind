@@ -42,10 +42,8 @@ const createReview = async (req, res) => {
 const getAllReviews = async (req, res) => {
   try {
     const reviews = await ReviewModel.find({}).sort({ created: -1 }).exec()
-    res.json(reviews)
     res.send(reviews)
   } catch (e) {
-    res.json('error')
     res.status(500).json({ error: 'Something went wrong.' })
   }
 }
