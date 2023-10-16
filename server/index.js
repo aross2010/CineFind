@@ -59,10 +59,6 @@ app.get('/', (req, res) => {
   res.json('yo')
 })
 
-app.get('/review', (req, res) => {
-  res.json('hi')
-})
-
 app.listen(2000, () => console.log('Server Running...'))
 
 module.exports = app
