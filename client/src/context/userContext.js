@@ -9,13 +9,14 @@ export function UserContextProvider({ children }) {
   useEffect(() => {
     const fetchUser = async () => {
       if (!user) {
-        const { data } = await axios.get(
+        const res = await axios.get(
           `https://cinefindapi.vercel.app/auth/profile`,
           {
             withCredentials: true,
           }
         )
-        if (data) setUser(data)
+        console.log(res)
+        if (res.data) setUser(res.data)
         else setUser(null)
       }
       // setUser(null)
