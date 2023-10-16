@@ -420,7 +420,7 @@ p {
   margin-top: 2rem;
 }
 
-.card {
+.card-home {
   border-radius: var(--rounded-square);
   background-color: var(--blue-dark);
   color: var(--secondary-text);

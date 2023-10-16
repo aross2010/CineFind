@@ -82,7 +82,7 @@ function Home() {
     return (
       <div
         key={card.header}
-        className="card"
+        className="card-home"
       >
         <h5 className="home-card-header uppercase light-shadow">
           <span style={{ fontSize: '1.75rem' }}>{card.icon}</span>
