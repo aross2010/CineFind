@@ -82,6 +82,7 @@ export default function LogIn() {
         }
       )
       console.log(localStorage.getItem('token'))
+      console.log('get profile', data)
       setUser(data)
       navigate(-1) // navigate to previous page
       setPopup(`Welcome back, ${res.data.username}!`, true)
