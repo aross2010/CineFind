@@ -146,13 +146,13 @@ export default function LogIn() {
               {isVisible ? (
                 <PiEyeFill
                   className="eye-icon"
-                  onClick={() => setIsVisible(true)}
+                  onClick={() => setIsVisible(false)}
                   style={{ color: 'var(--grey-text)' }}
                 />
               ) : (
                 <PiEyeSlashFill
                   className="eye-icon"
-                  onClick={() => setIsVisible(false)}
+                  onClick={() => setIsVisible(true)}
                   style={{ color: 'var(--grey-text)' }}
                 />
               )}
