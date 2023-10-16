@@ -206,7 +206,7 @@ export default function Game() {
             <img
               src={film.poster}
               onLoad={() => setLoading(false)}
-              style={{ border: 'none', pointerEvents: none }}
+              style={{ border: 'none', pointerEvents: 'none' }}
               className={`game-poster poster ${
                 isWin
                   ? ''
