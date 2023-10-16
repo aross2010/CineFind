@@ -16,6 +16,13 @@ const userRoutes = require('./routes/userRoutes')
 const gameRoutes = require('./routes/gameRoutes')
 // middleware
 
+app.use(
+  cors({
+    origin: 'https://cinefind.vercel.app',
+    credentials: true,
+  })
+)
+
 app.use(express.json())
 app.use(cookieParser())
 app.use(express.urlencoded({ extended: false }))
@@ -24,12 +31,6 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', 'https://cinefind.vercel.app')
   next()
 })
-app.use(
-  cors({
-    origin: 'https://cinefind.vercel.app',
-    credentials: true,
-  })
-)
 
 mongoose.connect(process.env.MONGO_URL).then(() => console.log('Connected.'))
 
