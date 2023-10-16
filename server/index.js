@@ -29,12 +29,7 @@ app.use((req, res, next) => {
   )
   next()
 })
-app.use(
-  cors({
-    origin: 'https://cinefind.vercel.app',
-    credentials: true,
-  })
-)
+app.use(cors())
 
 mongoose.connect(process.env.MONGO_URL).then(() => console.log('Connected.'))
 
