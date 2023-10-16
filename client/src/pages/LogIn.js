@@ -77,7 +77,7 @@ export default function LogIn() {
         `https://cinefindapi.vercel.app/auth/profile`,
         {
           headers: {
-            Authorization: `Bearer: ${token}`,
+            Authorization: `Bearer ${token}`,
           },
         },
         {
