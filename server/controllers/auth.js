@@ -102,8 +102,8 @@ const loginUser = async (req, res) => {
           throw err
         }
         res
-          .cookie('token', token)
-          .json({ username: user.name, path: '/auth/login' })
+          .cookie('token', token, { path: '/auth/login' })
+          .json({ username: user.name })
       }
     )
   } catch (e) {
