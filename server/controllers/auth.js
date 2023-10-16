@@ -112,7 +112,7 @@ const getProfile = async (req, res) => {
     console.log(user)
     res.json({ user }, { token })
   } catch (e) {
-    res.status(401).json({ error: 'Unauthorized.' })
+    res.status(401).json({ error: 'Unauthorized.', user })
   }
 
   // retrieve cookie and user data for front end
