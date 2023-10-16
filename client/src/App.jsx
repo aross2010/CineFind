@@ -7,7 +7,7 @@ import Popup from './compenents/Popup'
 import Loading from './compenents/LoadingSpinner'
 import { UserContext } from './context/userContext'
 import useWindowSizeHook from './hooks/widowSizeHook'
-import 'bootstrap/dist/css/bootstrap.min.css'
+
 import './styles/style.css'
 import './styles/cast.css'
 import './styles/checkbox.css'
@@ -27,6 +27,7 @@ import './styles/switchable.css'
 import './styles/textInput.css'
 import './styles/user.css'
 import './styles/year-slider.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 export const AppContext = React.createContext()
 
