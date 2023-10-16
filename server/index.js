@@ -20,7 +20,7 @@ app.use(express.json())
 app.use(cookieParser())
 app.use(express.urlencoded({ extended: false }))
 app.use((req, res, next) => {
-  res.setHeader({
+  res.set({
     'Access-Control-Allow-Origin': 'https://cinefind.vercel.app',
     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
     'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token',
