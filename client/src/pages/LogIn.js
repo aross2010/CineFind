@@ -76,7 +76,9 @@ export default function LogIn() {
           withCredentials: true,
         }
       )
-      console.log('created oken -> ', res)
+      const token = res.data.token
+      localStorage.setItem('token', token)
+      console.log(localStorage.getItem('token'))
       setUser(data)
       navigate(-1) // navigate to previous page
       setPopup(`Welcome back, ${res.data.username}!`, true)
