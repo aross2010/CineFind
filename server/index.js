@@ -20,12 +20,12 @@ app.use(cookieParser())
 app.use(express.urlencoded({ extended: false }))
 app.use(
   cors({
+    withCredentials: true,
     origin: 'https://cinefind.vercel.app',
   })
 )
 
 mongoose.connect(process.env.MONGO_URL).then(() => console.log('Connected.'))
-console.log(process.env.MONGO_URL)
 app.use('/reviews', reviewsRoutes)
 
 app.use('/discussions', discussionsRoutes)
@@ -44,6 +44,10 @@ app.use('/game', gameRoutes)
 
 app.get('/', (req, res) => {
   res.json('Hello')
+})
+
+app.get('/review', (req, res) => {
+  res.json('hi')
 })
 
 app.listen(2000, () => console.log('Server Running...'))
