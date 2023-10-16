@@ -55,10 +55,7 @@ export default function LogIn() {
       }
       const res = await axios.post(
         'https://cinefindapi.vercel.app/auth/login',
-        user,
-        {
-          withCredentials: true,
-        }
+        user
       )
       setData({
         username: {
@@ -79,7 +76,6 @@ export default function LogIn() {
           headers: {
             Authorization: `Bearer ${token}`,
           },
-          withCredentials: true,
         }
       )
       console.log('get profile', res2)
