@@ -40,6 +40,7 @@ const createReview = async (req, res) => {
 }
 
 const getAllReviews = async (req, res) => {
+  res.json('reviews')
   try {
     const reviews = await ReviewModel.find({}).sort({ created: -1 }).exec()
     res.send(reviews)

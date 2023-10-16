@@ -25,12 +25,7 @@ app.use(
   })
 )
 
-let error = process.env.MONGO_URL
-
-mongoose
-  .connect(process.env.MONGO_URL)
-  .then(() => console.log('Connected.'))
-  .catch((err) => (error = err))
+mongoose.connect(process.env.MONGO_URL).then(() => console.log('Connected.'))
 
 app.use('/reviews', reviewsRoutes)
 
@@ -49,7 +44,7 @@ app.use('/user', userRoutes)
 app.use('/game', gameRoutes)
 
 app.get('/', (req, res) => {
-  res.json(error)
+  res.json('yo')
 })
 
 app.get('/review', (req, res) => {
