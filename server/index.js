@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(
   cors({
     credentials: true,
-    origin: 'https://cinefind.vercel.app',
+    origin: 'https://cinefind.vercel.app/',
   })
 )
 
