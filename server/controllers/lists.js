@@ -8,6 +8,8 @@ const createList = async (req, res) => {
 
     const listUser = await UserModel.findById(user._id).exec()
 
+    console.log(lists)
+
     if (!listUser)
       return res
         .status(401)

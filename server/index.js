@@ -1,6 +1,5 @@
 const express = require('express')
 const dotenv = require('dotenv').config()
-const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const app = express()
@@ -16,9 +15,9 @@ const likeRoutes = require('./routes/likeRoutes')
 const userRoutes = require('./routes/userRoutes')
 const gameRoutes = require('./routes/gameRoutes')
 // middleware
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(express.json())
 app.use(cookieParser())
+app.use(express.urlencoded({ extended: false }))
 app.use(
   cors({
     credentials: true,
@@ -27,7 +26,7 @@ app.use(
 )
 
 mongoose.connect(process.env.MONGO_URL).then(() => console.log('Connected.'))
-
+console.log(process.env.MONGO_URL)
 app.use('/reviews', reviewsRoutes)
 
 app.use('/discussions', discussionsRoutes)
