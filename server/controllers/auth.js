@@ -109,7 +109,7 @@ const loginUser = async (req, res) => {
 const getProfile = async (req, res) => {
   const { token } = req.cookies
 
-  console.log(here)
+  console.log('here')
 
   // retrieve cookie and user data for front end
   if (token) {
