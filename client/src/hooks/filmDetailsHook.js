@@ -15,6 +15,7 @@ export default function useFilmDetailsHook() {
     setLists
   ) => {
     try {
+      console.log(id)
       const details = await getDetails(id)
       const filmReviews = await axios.get(
         `https://cinefindapi.vercel.app/reviews/film/${id}`
@@ -30,6 +31,7 @@ export default function useFilmDetailsHook() {
       setDiscussions(filmDiscussions.data)
       setLists(filmLists.data)
     } catch (e) {
+      console.log(e)
       setPopup('The film you are looking for does not exist.')
       navigate('/films')
     }
