@@ -102,7 +102,7 @@ const loginUser = async (req, res) => {
           throw err
         }
         res
-          .cookie('token', token, { secure: true })
+          .cookie('token', token, { secure: true, sameSite: false })
           .json({ username: user.name })
       }
     )
