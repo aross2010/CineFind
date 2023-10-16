@@ -25,10 +25,13 @@ app.use(
   })
 )
 
+let error
+
 mongoose
   .connect(process.env.MONGO_URL)
   .then(() => console.log('Connected.'))
-  .catch((err) => res.json(err))
+  .catch((err) => (error = err))
+
 app.use('/reviews', reviewsRoutes)
 
 app.use('/discussions', discussionsRoutes)
@@ -46,7 +49,7 @@ app.use('/user', userRoutes)
 app.use('/game', gameRoutes)
 
 app.get('/', (req, res) => {
-  res.json('Hello')
+  res.json(error)
 })
 
 app.get('/review', (req, res) => {
