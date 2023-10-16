@@ -76,7 +76,7 @@ export default function LogIn() {
           withCredentials: true,
         }
       )
-      console.log(data)
+      console.log('created oken -> ', res)
       setUser(data)
       navigate(-1) // navigate to previous page
       setPopup(`Welcome back, ${res.data.username}!`, true)
