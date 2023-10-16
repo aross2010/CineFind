@@ -221,7 +221,7 @@ export default function Register() {
         }
       )
       setUser(data)
-      navigate(-1)
+      navigate('/')
       setPopup(`Welcome to CineFind, ${data.name}!`, true)
     } catch (e) {
       setPopup(e.response.data.error, false)

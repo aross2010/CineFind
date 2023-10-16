@@ -88,7 +88,7 @@ const loginUser = async (req, res) => {
     const match = await comparePassword(password, user.password)
 
     if (!match) {
-      return res.json({ error: 'Invalid Password.' })
+      return res.status(401).json({ error: 'Invalid email or password.' })
     }
     const { _id, name, avatar } = user
     // create cookie for when a user logs in
@@ -97,8 +97,13 @@ const loginUser = async (req, res) => {
       process.env.JWT_SECRET,
       {},
       (err, token) => {
-        if (err) throw err
-        res.cookie('token', token).json({ username: user.name })
+        if (err) {
+          console.log(err)
+          throw err
+        }
+        res
+          .cookie('token', token, { secure: true })
+          .json({ username: user.name })
       }
     )
   } catch (e) {
@@ -108,8 +113,6 @@ const loginUser = async (req, res) => {
 
 const getProfile = async (req, res) => {
   const { token } = req.cookies
-
-  console.log('here')
 
   // retrieve cookie and user data for front end
   if (token) {
