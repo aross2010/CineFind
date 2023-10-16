@@ -101,6 +101,7 @@ const loginUser = async (req, res) => {
 }
 
 const getProfile = async (req, res) => {
+  res.json(null)
   const token = req.header('Authorization')
 
   if (!token) {
