@@ -37,6 +37,11 @@ function App() {
   const [userLoaded, setUserLoaded] = useState(null)
 
   useEffect(() => {
+    document.body.style.background =
+      '#14181c url(https://s.ltrbxd.com/static/img/content-bg.0d9a0f0f.png) 0 -1px repeat-x'
+  }, [])
+
+  useEffect(() => {
     if (user !== undefined) setUserLoaded(true)
   }, [user])
 
