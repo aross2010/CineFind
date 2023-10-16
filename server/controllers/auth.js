@@ -106,6 +106,7 @@ const loginUser = async (req, res) => {
             secure: true,
             sameSite: false,
             httpOnly: true,
+            domain: 'cinefind.vercel.app',
           })
           .json({ username: user.name })
       }
