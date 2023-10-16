@@ -1,7 +1,6 @@
 import { useContext, useState, useEffect } from 'react'
 import axios from 'axios'
 import FilmSocial from '../compenents/FilmSocial'
-import { Link } from 'react-router-dom'
 import Loading from '../compenents/LoadingSpinner'
 import { UserContext } from '../context/userContext'
 import homeImg from '../images/hero-image.png'
