@@ -25,7 +25,7 @@ app.use(
   })
 )
 
-let error
+let error = process.env.MONGO_URL
 
 mongoose
   .connect(process.env.MONGO_URL)
