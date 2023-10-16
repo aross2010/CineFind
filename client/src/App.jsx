@@ -54,7 +54,11 @@ function App() {
           className="container-fluid"
           style={width < 1175 ? { overflowX: 'hidden' } : {}}
         >
-          {!userLoaded ? <Loading /> : <AppRoutes />}
+          {!userLoaded && window.location.pathname !== '/' ? (
+            <Loading />
+          ) : (
+            <AppRoutes />
+          )}
           <Popup />
         </div>
       </div>

@@ -107,6 +107,16 @@
   transition: opacity 500ms ease-in-out;
 }
 
+.preview-container:first-of-type {
+  border-top-right-radius: var(--rounded-square);
+  border-top-left-radius: var(--rounded-square);
+}
+
+.preview-container:last-of-type {
+  border-bottom-right-radius: var(--rounded-square);
+  border-bottom-left-radius: var(--rounded-square);
+}
+
 .preview-container h5 {
   padding-right: 1rem;
 }

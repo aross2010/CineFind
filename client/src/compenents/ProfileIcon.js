@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState, useRef } from 'react'
 import { UserContext } from '../context/userContext'
+import { ThreeDots } from 'react-loader-spinner'
 import '../styles/profile-icon.css'
 import { BsPersonCircle } from 'react-icons/bs'
 import axios from 'axios'
@@ -9,6 +10,7 @@ import usePopupHook from '../hooks/popupHook'
 export default function ProfileIcon() {
   const { user, setUser } = useContext(UserContext)
   const [showDropDown, setShowDropDown] = useState(false)
+  const [loading, setLoading] = useState(false)
   const { setPopup } = usePopupHook()
   const navigate = useNavigate()
   const dropdown = useRef()
@@ -32,16 +34,23 @@ export default function ProfileIcon() {
   })
 
   const handleLogout = async () => {
-    const { data } = await axios.get(
-      `https://cinefindapi.vercel.app/auth/logout`,
-      {
-        withCredentials: true,
-      }
-    )
-    setPopup(`Goodbye, ${user.name}!`, true)
-    navigate('/')
-    setUser(data)
-    setShowDropDown(false)
+    setLoading(true)
+    try {
+      const { data } = await axios.get(
+        `https://cinefindapi.vercel.app/auth/logout`,
+        {
+          withCredentials: true,
+        }
+      )
+      setPopup(`Goodbye, ${user.name}!`, true)
+      navigate('/')
+      setUser(data)
+    } catch (e) {
+      setPopup(e.response.data.error)
+    } finally {
+      setShowDropDown(false)
+      setLoading(false)
+    }
   }
 
   const userOptions = user && (
@@ -50,6 +59,7 @@ export default function ProfileIcon() {
         to={`/user/${user.name}`}
         className="profile-option link-text"
         onClick={() => setShowDropDown(false)}
+        disabled={loading}
       >
         Profile
       </Link>
@@ -57,8 +67,17 @@ export default function ProfileIcon() {
         className="profile-option"
         style={{ color: 'inherit' }}
         onClick={handleLogout}
+        disabled={loading}
       >
-        Log out
+        {loading ? (
+          <ThreeDots
+            color="#76F88E"
+            height={18}
+            width={18}
+          />
+        ) : (
+          'Log out'
+        )}
       </button>
     </>
   )

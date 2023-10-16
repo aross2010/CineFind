@@ -202,10 +202,11 @@ export default function Game() {
           style={{ alignItems: 'flex-start' }}
         >
           <div className="game-poster-wrapper light-shadow">
+            <div className="poster-overlay"></div>
             <img
               src={film.poster}
               onLoad={() => setLoading(false)}
-              style={{ border: 'none' }}
+              style={{ border: 'none', pointerEvents: none }}
               className={`game-poster poster ${
                 isWin
                   ? ''
@@ -359,6 +360,7 @@ export default function Game() {
         hidden={filmsGuessed.length === 0}
         style={{
           display: 'flex',
+          flexDirection: 'column',
           textAlign: 'left',
           width: '100%',
           borderTop: '1px solid var(--blue-dark)',
