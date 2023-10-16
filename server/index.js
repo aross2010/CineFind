@@ -26,7 +26,6 @@ app.use((req, res, next) => {
 })
 app.use(
   cors({
-    withCredentials: true,
     origin: 'https://cinefind.vercel.app',
   })
 )
