@@ -106,12 +106,10 @@ const loginUser = async (req, res) => {
             secure: true,
             sameSite: false,
             httpOnly: true,
-            domain: 'cinefind.vercel.app',
           })
           .json({ username: user.name })
       }
     )
-    console.log(res.getHeaders())
   } catch (e) {
     res.status(500).json({ error: 'Something went wrong.' })
   }
