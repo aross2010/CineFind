@@ -1,6 +1,5 @@
--> on logout btn, have loading symbol appear and disable button 
--> skeleton the data on home page and lists hub
+-> on logout btn, have loading symbol appear and disable button  (keep width)
+-> skeleton the data on home page and lists hub, game hub for stats
 -> look for other boostrap overrides
--> homepage no loading modal
 -> switch to web token auth
 -> display sort

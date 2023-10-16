@@ -91,38 +91,28 @@ const loginUser = async (req, res) => {
       return res.status(401).json({ error: 'Invalid username or password.' })
     }
     const { _id, name, avatar } = user
-    // create cookie for when a user logs in
-    jwt.sign(
-      { _id, name, avatar },
-      process.env.JWT_SECRET,
-      {},
-      (err, token) => {
-        if (err) {
-          console.log(err)
-          throw err
-        }
-        res
-          .cookie('token', token, { sameSite: 'None', secure: true })
-          .json({ username: user.name })
-      }
-    )
+    // jwt token creation
+    const token = jwt.sign({ _id, name, avatar }, process.env.JWT_SECRET)
+
+    res.json({ token })
   } catch (e) {
     res.status(500).json({ error: 'Something went wrong.' })
   }
 }
 
 const getProfile = async (req, res) => {
-  const { token } = req.cookies
+  // const { token } = req.cookies
 
-  // retrieve cookie and user data for front end
-  if (token) {
-    jwt.verify(token, process.env.JWT_SECRET, {}, (err, user) => {
-      if (err) throw err
-      res.json(user)
-    })
-  } else {
-    res.json(null)
-  }
+  // // retrieve cookie and user data for front end
+  // if (token) {
+  //   jwt.verify(token, process.env.JWT_SECRET, {}, (err, user) => {
+  //     if (err) throw err
+  //     res.json(user)
+  //   })
+  // } else {
+  //   res.json(null)
+  // }
+  res.json(null)
 }
 
 const logoutUser = async (req, res) => {
