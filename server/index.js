@@ -28,7 +28,6 @@ app.use((req, res, next) => {
     'Access-Control-Allow-Credentials': true,
     'Access-Control-Allow-Origin': true,
   })
-
   next()
 })
 app.use(

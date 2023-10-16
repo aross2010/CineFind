@@ -88,7 +88,7 @@ const loginUser = async (req, res) => {
     const match = await comparePassword(password, user.password)
 
     if (!match) {
-      return res.status(401).json({ error: 'Invalid email or password.' })
+      return res.status(401).json({ error: 'Invalid username or password.' })
     }
     const { _id, name, avatar } = user
     // create cookie for when a user logs in
@@ -101,11 +101,10 @@ const loginUser = async (req, res) => {
           console.log(err)
           throw err
         }
-        res
-          .cookie('token', token, { secure: true })
-          .json({ username: user.name })
+        res.cookie('token', token).json({ username: user.name })
       }
     )
+    console.log(res.getHeaders())
   } catch (e) {
     res.status(500).json({ error: 'Something went wrong.' })
   }
