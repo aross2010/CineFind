@@ -123,7 +123,7 @@ const getProfile = async (req, res) => {
       res.json(user)
     })
   } else {
-    res.json(req)
+    res.json(null)
   }
 }
 
