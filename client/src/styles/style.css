@@ -185,10 +185,6 @@ p {
   padding: 0;
 }
 
-.alt-font {
-  font-family: 'Merriweather', serif;
-}
-
 .square-btn {
   border-radius: var(--rounded-square);
   padding: 0.5rem 1rem;

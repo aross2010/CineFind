@@ -74,7 +74,7 @@ export default function Info({ film, mobile }) {
   })
 
   return (
-    <div className={`${!mobile && 'info-container'}`}>
+    <div className={`${!mobile && 'info-container-content'}`}>
       <h1 className={`info-title ${mobile && 'mobile'}`}>
         {title}
         <Link
