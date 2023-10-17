@@ -73,7 +73,7 @@ export default function LogIn() {
       const res2 = await axios
         .get(`https://cinefindapi.vercel.app/auth/profile`, {
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: `${token}`,
           },
         })
         .then((res) => {
