@@ -92,7 +92,10 @@ const loginUser = async (req, res) => {
     }
     const { _id, name, avatar } = user
     // jwt token creation
-    const token = jwt.sign({ _id, name, avatar }, process.env.JWT_SECRET)
+    const token = jwt.sign(
+      { _id: _id, name: name, avatar: avatar },
+      process.env.JWT_SECRET
+    )
 
     res.json({ token })
   } catch (e) {
@@ -103,14 +106,9 @@ const loginUser = async (req, res) => {
 const getProfile = async (req, res) => {
   try {
     const token = req.header('Authorization')
-    const decoded = jwt.verify(
-      token,
-      process.env.JWT_SECRET,
-      function (err, decoded) {
-        if (err) res.json({ error: 'error in verification' })
-        res.json(decoded.name)
-      }
-    )
+    const decoded = jwt.verify(token, process.env.JWT_SECRET)
+
+    res.json(decoded)
   } catch (e) {
     res.json({ error: 'error' })
   }
