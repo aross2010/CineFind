@@ -105,9 +105,8 @@ const getProfile = async (req, res) => {
     const token = req.header('Authorization')
 
     if (!token) {
-      res.status(401).json({ error: 'Unauthorized.' })
+      res.json(null)
     }
-
     const user = jwt.verify(token, process.env.JWT_SECRET)
     res.json({ user })
   } catch (e) {
