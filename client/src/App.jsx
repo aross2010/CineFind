@@ -51,7 +51,7 @@ function App() {
       <div style={{ minHeight: '100vh' }}>
         <Navbar />
         <div
-          className="container-fluid"
+          className="base-container"
           style={width < 1175 ? { overflowX: 'hidden' } : {}}
         >
           {!userLoaded && window.location.pathname !== '/' ? (

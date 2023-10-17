@@ -420,7 +420,7 @@ export default function CastPage() {
 
   return (
     <div
-      className="cast-page-container container-fluid"
+      className="cast-page-container base-container"
       style={width <= 1175 ? { padding: '0 1.5rem' } : {}}
     >
       {person ? width <= 900 ? sml : lrg : <LoadingSpinner />}
