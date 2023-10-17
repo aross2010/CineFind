@@ -101,20 +101,18 @@ const loginUser = async (req, res) => {
 }
 
 const getProfile = async (req, res) => {
-  // const token = req.header('Authorization')
+  try {
+    const token = req.header('Authorization')
 
-  // if (!token) {
-  //   res.status(401).json({ error: 'Unauthorized.' })
-  // }
+    if (!token) {
+      res.status(401).json({ error: 'Unauthorized.' })
+    }
 
-  // try {
-  //   const user = jwt.verify(token, process.env.JWT_SECRET)
-  //   res.json({ user })
-  // } catch (e) {
-  //   res.status(401).json({ error: 'Unauthorized.', user })
-  // }
-
-  res.json(null)
+    const user = jwt.verify(token, process.env.JWT_SECRET)
+    res.json({ user })
+  } catch (e) {
+    res.json(null)
+  }
 
   // retrieve cookie and user data for front end
 }
