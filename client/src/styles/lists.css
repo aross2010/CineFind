@@ -86,6 +86,7 @@
   opacity: 0;
   border-radius: var(--rounded-square);
   overflow-y: scroll;
+  max-height: 30rem;
 }
 
 .movie-list.active {
@@ -100,8 +101,7 @@
   display: flex;
   align-items: center;
   border-bottom: 1px solid var(--blue-dark);
-  border-left: 1px solid var(--blue-dark);
-  border-right: 1px solid var(--blue-dark);
+
   background-color: var(--primary-dark);
   height: 5rem;
   transition: opacity 500ms ease-in-out;
