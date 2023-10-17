@@ -151,10 +151,7 @@ export default function ListCreate() {
       onDragEnd={handleOnDragEnd}
       onDragStart={() => setIsDragging(true)}
     >
-      <Droppable
-        droppableId="list"
-        scroll={{ x: 0, y: 200 }}
-      >
+      <Droppable droppableId="list">
         {(provided) => (
           <ul
             {...provided.droppableProps}
@@ -168,6 +165,7 @@ export default function ListCreate() {
                 <Draggable
                   key={film.tmdbID}
                   draggableId={film.title}
+                  scroll={{ x: 0, y: 200 }}
                   index={index}
                 >
                   {(provided) => (

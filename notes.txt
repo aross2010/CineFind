@@ -4,3 +4,4 @@
 -> look for other boostrap overrides
 -> dropdown option space between
 -> cineq percentage user page
+-> drouble popup when registering
