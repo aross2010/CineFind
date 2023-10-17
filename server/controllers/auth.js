@@ -104,7 +104,7 @@ const getProfile = async (req, res) => {
   try {
     const token = req.header('Authorization')
     const user = jwt.verify(token, process.env.JWT_SECRET)
-    res.json(user)
+    res.json({ message: 'Ummmm' })
   } catch (e) {
     res.json(null)
   }
