@@ -71,7 +71,10 @@ export default function LogIn() {
       localStorage.setItem('token', token)
       console.log(token)
       const res2 = await axios.get(
-        `https://cinefindapi.vercel.app/auth/profile`
+        `https://cinefindapi.vercel.app/auth/profile`,
+        {
+          Authorization: `Bearer ${token}`,
+        }
       )
       console.log('get profile', res2)
       setUser(null)
