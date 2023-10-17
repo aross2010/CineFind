@@ -207,12 +207,19 @@ export default function Register() {
       )
 
       // hit login & get profile routes
-      const loggedInUser = await axios.post(
+      const res = await axios.post(
         'https://cinefindapi.vercel.app/auth/login',
         { username: name.value, password: password.value }
       )
+      const token = res.data.token
+      localStorage.setItem('token', token)
       const { data } = await axios.get(
-        `https://cinefindapi.vercel.app/auth/profile`
+        `https://cinefindapi.vercel.app/auth/profile`,
+        {
+          headers: {
+            Authorization: `${token}`,
+          },
+        }
       )
       setUser(data)
       navigate('/')
