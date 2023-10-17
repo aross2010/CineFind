@@ -171,8 +171,8 @@ export default function UserPage() {
         >
           <CircularProgressLabel fontSize="1.1rem">
             {`${
-              percentRight(userData.game.easy) === 0
-                ? 'O'
+              percentRight(userData.game.easy) === 'N/A'
+                ? 'N/A'
                 : percentRight(userData.game.easy)
             }%`}
           </CircularProgressLabel>
@@ -191,8 +191,8 @@ export default function UserPage() {
         >
           <CircularProgressLabel fontSize="1.1rem">
             {`${
-              percentRight(userData.game.medium) === 0
-                ? 'O'
+              percentRight(userData.game.medium) === 'N/A'
+                ? 'N/A'
                 : percentRight(userData.game.medium)
             }%`}
           </CircularProgressLabel>
@@ -211,8 +211,8 @@ export default function UserPage() {
         >
           <CircularProgressLabel fontSize="1.1rem">
             {`${
-              percentRight(userData.game.hard) === 0
-                ? 'O'
+              percentRight(userData.game.hard) === 'N/A'
+                ? 'N/A'
                 : percentRight(userData.game.hard)
             }%`}
           </CircularProgressLabel>
