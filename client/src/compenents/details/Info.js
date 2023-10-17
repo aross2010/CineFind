@@ -1,40 +1,6 @@
 import { Link } from 'react-router-dom'
 import Ratings from './Ratings'
 
-// <div>
-//               <h1 className="info-title mobile">{film.title}</h1>
-//               <a className="link-text alt info-year underlined mobile">
-//                 {film.year}
-//               </a>
-//             </div>
-
-//             <span className="mobile-director">
-//               {film.director.length > 0 && 'Directed by'} {renderedDirectors}
-//             </span>
-//             <div className="mobile-stats">
-//               {film.runtime > 0 && <>{film.runtime} min</>}{' '}
-//               {film.MPAARating !== 'N/A' && (
-//                 <>
-//                   <span className="bullet-point">&#8226;</span>
-//                   {film.MPAARating}
-//                 </>
-//               )}{' '}
-//               {film.RTScore && (
-//                 <>
-//                   <span className="bullet-point">&#8226;</span>{' '}
-//                   <div className="mobile-details-ratings">
-//                     {' '}
-//                     <Ratings
-//                       mobile
-//                       rtScore={film.RTScore}
-//                       imdbScore={film.IMDBScore}
-//                       imdbID={film.imdb_id}
-//                     />
-//                   </div>
-//                 </>
-//               )}
-//             </div>
-
 export default function Info({ film, mobile }) {
   const {
     title,
@@ -52,7 +18,7 @@ export default function Info({ film, mobile }) {
       <span key={i}>
         <Link
           to={`/cast/${dir.id}`}
-          className="link-text alt info-director underlined"
+          className="link-text alt info-director bold-link"
         >
           {dir.name}
         </Link>
@@ -78,7 +44,7 @@ export default function Info({ film, mobile }) {
       <h1 className={`info-title ${mobile && 'mobile'}`}>
         {title}
         <Link
-          className={`link-text alt info-year underlined ${mobile && 'mobile'}`}
+          className={`link-text alt info-year bold-link ${mobile && 'mobile'}`}
           to={`/films?years=${film.year}%2B${film.year}`}
         >
           {year}

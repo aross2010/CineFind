@@ -112,6 +112,10 @@
   width: 22.5%;
 }
 
+.bold-link {
+  font-weight: 400;
+}
+
 .info-col {
   padding-left: 4rem;
   width: 72.5%;
@@ -699,5 +703,11 @@ textarea::placeholder {
   .discussion-container,
   .review-container {
     padding: 1.5rem 0rem;
+  }
+}
+
+@media (max-width: 1150px) {
+  .bold-link {
+    font-weight: 500;
   }
 }
