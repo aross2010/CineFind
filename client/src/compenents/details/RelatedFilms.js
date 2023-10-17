@@ -40,9 +40,9 @@ export default function RelatedFilms({
           bg="var(--secondary-dark)"
           label={`${film.title} ${film.year && `(${film.year})`}`}
         >
-          <Link
+          <a
             className="link-no-text"
-            to={`/film/${film.id}`}
+            href={`/film/${film.id}`}
           >
             {film.poster.includes('null') ? (
               <div className="similar no-poster">{film.title}</div>
@@ -53,7 +53,7 @@ export default function RelatedFilms({
                 className="similar poster"
               />
             )}
-          </Link>
+          </a>
         </Tooltip>
       )
     })
