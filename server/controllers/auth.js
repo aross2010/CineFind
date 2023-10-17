@@ -107,7 +107,8 @@ const getProfile = async (req, res) => {
       token,
       process.env.JWT_SECRET,
       function (err, decoded) {
-        res.json(decoded)
+        if (err) res.json({ error: 'error in verification' })
+        res.json(decoded.name)
       }
     )
   } catch (e) {
