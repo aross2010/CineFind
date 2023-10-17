@@ -10,7 +10,6 @@ import usePopupHook from '../hooks/popupHook'
 export default function ProfileIcon() {
   const { user, setUser } = useContext(UserContext)
   const [showDropDown, setShowDropDown] = useState(false)
-  const [loading, setLoading] = useState(false)
   const { setPopup } = usePopupHook()
   const navigate = useNavigate()
   const dropdown = useRef()
@@ -34,22 +33,15 @@ export default function ProfileIcon() {
   })
 
   const handleLogout = async () => {
-    setLoading(true)
     try {
-      const { data } = await axios.get(
-        `https://cinefindapi.vercel.app/auth/logout`,
-        {
-          withCredentials: true,
-        }
-      )
+      localStorage.removeItem('token')
       setPopup(`Goodbye, ${user.name}!`, true)
+      setUser(null)
       navigate('/')
-      setUser(data)
     } catch (e) {
       setPopup(e.response.data.error)
     } finally {
       setShowDropDown(false)
-      setLoading(false)
     }
   }
 
@@ -59,7 +51,6 @@ export default function ProfileIcon() {
         to={`/user/${user.name}`}
         className="profile-option link-text"
         onClick={() => setShowDropDown(false)}
-        disabled={loading}
       >
         Profile
       </Link>
@@ -67,17 +58,8 @@ export default function ProfileIcon() {
         className="profile-option"
         style={{ color: 'inherit' }}
         onClick={handleLogout}
-        disabled={loading}
       >
-        {loading ? (
-          <ThreeDots
-            color="#76F88E"
-            height={18}
-            width={18}
-          />
-        ) : (
-          'Log out'
-        )}
+        Log out
       </button>
     </>
   )

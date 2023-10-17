@@ -115,14 +115,4 @@ const getProfile = async (req, res) => {
   // retrieve cookie and user data for front end
 }
 
-const logoutUser = async (req, res) => {
-  const { token } = req.cookies
-
-  if (token) {
-    res.clearCookie('token')
-  }
-
-  res.json(null)
-}
-
-module.exports = { registerUser, loginUser, getProfile, logoutUser }
+module.exports = { registerUser, loginUser, getProfile }
