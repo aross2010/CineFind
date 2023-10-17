@@ -107,11 +107,11 @@ const getProfile = async (req, res) => {
       token,
       process.env.JWT_SECRET,
       function (err, decoded) {
-        res.json(decoded.foo)
+        res.json(decoded)
       }
     )
   } catch (e) {
-    res.json(null)
+    res.json({ error: 'error' })
   }
 
   // retrieve cookie and user data for front end
