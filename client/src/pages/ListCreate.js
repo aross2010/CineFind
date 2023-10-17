@@ -151,7 +151,10 @@ export default function ListCreate() {
       onDragEnd={handleOnDragEnd}
       onDragStart={() => setIsDragging(true)}
     >
-      <Droppable droppableId="list">
+      <Droppable
+        droppableId="list"
+        scroll={{ x: 0, y: 20 }}
+      >
         {(provided) => (
           <ul
             {...provided.droppableProps}

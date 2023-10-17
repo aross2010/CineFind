@@ -1,5 +1,6 @@
 
 -> skeleton the data on home page and lists hub, game hub for stats
+-> delete button switch with save btn when active list
 -> look for other boostrap overrides
 -> dropdown option space between
 -> cineq percentage user page
