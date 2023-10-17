@@ -12,6 +12,8 @@
   border-radius: var(--rounded-square);
   transition: transform 400ms ease-in-out;
   line-height: 1;
+  font-weight: 300;
+  color: var(--primary-dark);
 }
 
 @media (max-width: 600px) {
@@ -22,22 +24,29 @@
 }
 
 .popup-container.danger {
-  background-color: var(--red-alt);
+  background-color: rgb(253, 201, 201);
+  border: 1px solid var(--red-alt);
 }
 
 .popup-container.success {
-  background-color: var(--green-alt);
-}
-
-.popup-container.danger .popup-cancel {
-  color: var(--primary-dark);
-}
-.popup-container.success .popup-cancel {
-  color: var(--secondary-text);
+  background-color: rgb(205, 253, 205);
+  border: 1px solid var(--green-alt);
 }
 
 .popup-container.active {
   transform: translate(50%, 0%);
+}
+
+.popup-icon {
+  font-size: 1.25rem;
+}
+
+.popup-icon.check {
+  color: var(--green-alt);
+}
+
+.popup-icon.warn {
+  color: var(--red-alt);
 }
 
 .popup-container span {
@@ -45,13 +54,9 @@
   font-size: 1rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
   width: max-content;
   margin-right: 0.5rem;
-}
-
-.popup-container.success span {
-  color: var(--secondary-text);
 }
 
 .popup-container.danger span {
@@ -64,5 +69,5 @@
   background-color: transparent;
   padding: 0;
   margin: 0;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
 }

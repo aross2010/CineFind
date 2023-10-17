@@ -42,7 +42,7 @@ export default function UserPage() {
         `https://cinefindapi.vercel.app/discussions/user/${name}`
       )
       setDiscussions(userDiscussions.data)
-      if (name === user.name) {
+      if (user && name === user.name) {
         const userLists = await axios.get(
           `https://cinefindapi.vercel.app/lists/user/${name}/own`
         )
@@ -99,14 +99,11 @@ export default function UserPage() {
         ratings,
         average,
       })
-    } catch (e) {
-      navigate('/')
-      setPopup(e.response.data.error)
-    } finally {
       setLoading(false)
+    } catch (e) {
+      setPopup(e.response.data.error)
+      navigate('/')
     }
-
-    setLoading(false)
   }
 
   useEffect(() => {

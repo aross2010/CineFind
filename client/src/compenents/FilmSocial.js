@@ -181,7 +181,6 @@ export default function FilmSocial({
           setSortedDiscussions={setDiscussions}
         />
       </div>
-      {<Popup />}
     </>
   )
 }

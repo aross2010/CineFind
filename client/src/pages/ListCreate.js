@@ -47,6 +47,10 @@ export default function ListCreate() {
 
   useEffect(() => {
     if (list) {
+      if (user.name !== list.user.name) {
+        navigate('/lists')
+        setPopup('You do not have access to edit this list.')
+      }
       setName(list.name)
       setDescription(list.description)
       setFilms(list.films)
@@ -159,6 +163,11 @@ export default function ListCreate() {
             className={`movie-list ${isDragging && 'dragging'} ${
               postersLoaded.length >= 2 && 'active'
             }`}
+            style={
+              films.length > 6
+                ? { overflowY: 'scroll', maxHeight: '30rem' }
+                : {}
+            }
           >
             {films.map((film, index) => {
               return (
@@ -332,7 +341,10 @@ export default function ListCreate() {
   )
 
   const formBtns = (
-    <div className="list-form-btns">
+    <div
+      className="list-form-btns"
+      style={width <= 750 ? { marginTop: '2rem' } : {}}
+    >
       <button
         onClick={handleCancel}
         className="cancel-btn square-btn"
@@ -341,11 +353,16 @@ export default function ListCreate() {
         Cancel
       </button>
       <button
-        className="submit-btn square-btn"
-        type="submit"
+        className={`square-btn ${
+          width < 750 ? 'submit-btn' : 'delete-btn-list'
+        }`}
+        onClick={!list ? handleSubmit : handleDeleteWarning}
+        type={!list ? 'submit' : ''}
         disabled={loading}
       >
-        {!loading ? (
+        {!loading && list && width > 750 ? (
+          'Delete'
+        ) : !loading && width <= 750 ? (
           'Submit'
         ) : (
           <ThreeDots
@@ -355,6 +372,16 @@ export default function ListCreate() {
           />
         )}
       </button>
+      {width <= 750 && (
+        <button
+          style={{ marginLeft: 'auto' }}
+          className="square-btn delete-btn-list"
+          disabled={loading}
+          onClick={handleDeleteWarning}
+        >
+          delete
+        </button>
+      )}
     </div>
   )
 
@@ -409,18 +436,14 @@ export default function ListCreate() {
           </div>
 
           {films.length > 0 ? renderedList : noMoviesContainer}
-          {list && (
+          {list && width > 750 && (
             <button
-              className="square-btn"
-              onClick={handleDeleteWarning}
-              style={{
-                backgroundColor: 'var(--red-alt)',
-                color: 'var(--primary-dark)',
-                marginTop: '1rem',
-              }}
+              className="square-btn submit-btn"
+              onClick={handleSubmit}
               disabled={loading}
+              style={{ marginTop: '1rem' }}
             >
-              delete list
+              Submit
             </button>
           )}
         </div>

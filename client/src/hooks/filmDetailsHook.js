@@ -31,7 +31,6 @@ export default function useFilmDetailsHook() {
       setDiscussions(filmDiscussions.data)
       setLists(filmLists.data)
     } catch (e) {
-      console.log(e)
       setPopup('The film you are looking for does not exist.')
       navigate('/films')
     }

@@ -27,8 +27,8 @@ export default function LogIn() {
 
   useEffect(() => {
     if (user) {
-      navigate(-1)
       setPopup('Log out to switch accounts.')
+      navigate(-1)
     }
   }, [])
 

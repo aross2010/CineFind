@@ -452,6 +452,13 @@ p {
   transition: opacity 200ms ease-in-out;
 }
 
+.not-found-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 @media (max-width: 1175px) {
   .home-page {
     padding: 0 1rem;

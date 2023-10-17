@@ -3,14 +3,17 @@ import '../styles/popup.css'
 import { PopupContext } from '../context/popupContext'
 import ReactDOM from 'react-dom'
 
-import { RiErrorWarningFill, RiCheckboxCircleFill } from 'react-icons/ri'
+import {
+  RiErrorWarningFill,
+  RiCheckboxCircleFill,
+  RiCloseFill,
+} from 'react-icons/ri'
 
 export default function Popup() {
   const { popup, setPopup } = useContext(PopupContext)
   const [timer, setTimer] = useState(null)
 
   useEffect(() => {
-    console.log('new popup')
     if (timer) {
       clearTimeout(timer)
     }
@@ -30,14 +33,18 @@ export default function Popup() {
       }`}
     >
       <span>
-        {popup.success ? <RiCheckboxCircleFill /> : <RiErrorWarningFill />}{' '}
+        {popup.success ? (
+          <RiCheckboxCircleFill className="popup-icon check" />
+        ) : (
+          <RiErrorWarningFill className="popup-icon warn" />
+        )}{' '}
         {popup.msg}
       </span>
       <button
         className="popup-cancel"
         onClick={() => setPopup({ ...popup, active: false })}
       >
-        &times;
+        <RiCloseFill />
       </button>
     </div>,
     document.getElementById('portal')

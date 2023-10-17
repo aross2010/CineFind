@@ -49,8 +49,8 @@ export default function Register() {
 
   useEffect(() => {
     if (user) {
-      navigate('/')
       setPopup('Log out to make a new account.')
+      navigate('/')
     }
   }, [])
 
@@ -222,12 +222,11 @@ export default function Register() {
         }
       )
       setUser(data)
-      navigate('/')
       setPopup(`Welcome to CineFind, ${data.name}!`, true)
+      navigate('/')
     } catch (e) {
       setPopup(e.response.data.error, false)
       handleValidations()
-    } finally {
       setLoading(false)
     }
   }

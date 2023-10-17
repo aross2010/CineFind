@@ -85,8 +85,6 @@
   transition: opacity 500ms ease-in-out;
   opacity: 0;
   border-radius: var(--rounded-square);
-  overflow-y: scroll;
-  max-height: 30rem;
 }
 
 .movie-list.active {
@@ -115,6 +113,7 @@
 .preview-container:last-of-type {
   border-bottom-right-radius: var(--rounded-square);
   border-bottom-left-radius: var(--rounded-square);
+  border-bottom: none;
 }
 
 .preview-container h5 {
@@ -252,6 +251,11 @@ input[type='number']::-webkit-outer-spin-button {
   font-size: 0.8rem;
   font-weight: 400;
   border: 2px solid var(--primary-dark);
+}
+
+.delete-btn-list {
+  background-color: var(--red-alt) !important;
+  color: var(--primary-dark) !important;
 }
 
 /* List View */

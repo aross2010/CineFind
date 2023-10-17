@@ -47,7 +47,6 @@ function App() {
 
   return (
     <>
-      <head></head>
       <div style={{ minHeight: '100vh' }}>
         <Navbar />
         <div

@@ -43,10 +43,6 @@ function FilmPage() {
   })
 
   useEffect(() => {
-    console.log(film)
-  }, [film])
-
-  useEffect(() => {
     fetchDetails(id, setFilm, setReviews, setDiscussions, setLists)
   }, [id])
 

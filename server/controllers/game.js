@@ -17,6 +17,11 @@ const getFilmToPlay = async (req, res) => {
       const options = films.easy.filter((film) => {
         return !played.includes(film)
       })
+      if (options.length === 0)
+        res.send({
+          error:
+            'You have completed all available games. Stay tuned for more soon.',
+        })
       const film = options[Math.floor(Math.random() * options.length)]
       res.send({
         filmID: createID(film),
@@ -25,6 +30,11 @@ const getFilmToPlay = async (req, res) => {
       const options = films.medium.filter((film) => {
         return !played.includes(film)
       })
+      if (options.length === 0)
+        res.send({
+          error:
+            'You have completed all available games. Stay tuned for more soon.',
+        })
       const film = options[Math.floor(Math.random() * options.length)]
       res.send({
         filmID: createID(film),
@@ -33,6 +43,11 @@ const getFilmToPlay = async (req, res) => {
       const options = films.hard.filter((film) => {
         return !played.includes(film)
       })
+      if (options.length === 0)
+        res.send({
+          error:
+            'You have completed all available games. Stay tuned for more soon.',
+        })
       const film = options[Math.floor(Math.random() * options.length)]
       res.send({
         filmID: createID(film),

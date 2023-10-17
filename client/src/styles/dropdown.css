@@ -54,7 +54,7 @@
   padding: 0.5rem;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  justify-content: space-between;
   transition: filter 200ms ease-in-out;
 }
 
