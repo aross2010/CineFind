@@ -9,7 +9,7 @@ export function UserContextProvider({ children }) {
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token) {
-      console.log(token)
+      console.log('token present')
     }
     setUser(null)
   }, [])

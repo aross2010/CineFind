@@ -103,11 +103,9 @@ const loginUser = async (req, res) => {
 const getProfile = async (req, res) => {
   try {
     const token = req.header('Authorization')
-    jwt.verify(token, process.env.JWT_SECRET, {}, (err, user) => {
-      if (err) res.json({ message: 'error' })
-      res.json(user)
-    })
-    res.json({ message: 'Ummmm' })
+
+    res.json({ message: `${token}` })
+    // jwt.verify(token, process.env.JWT_SECRET)
   } catch (e) {
     res.json(null)
   }
