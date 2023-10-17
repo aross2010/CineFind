@@ -19,6 +19,8 @@ export function UserContextProvider({ children }) {
         .catch((e) => {
           setUser(null)
         })
+    } else {
+      setUser(null)
     }
   }
 
