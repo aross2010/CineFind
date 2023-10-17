@@ -20,7 +20,7 @@ export const DetailsContext = React.createContext()
 function FilmPage() {
   const { id } = useParams()
   const [film, setFilm] = useState('')
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const [reviews, setReviews] = useState([])
   const [discussions, setDiscussions] = useState([])
   const [isClamped, setIsClamped] = useState(null)
@@ -43,6 +43,7 @@ function FilmPage() {
   })
 
   useEffect(() => {
+    setLoading(true)
     fetchDetails(id, setFilm, setReviews, setDiscussions, setLists)
   }, [id])
 

@@ -20,5 +20,5 @@ export default function ReviewList({
     )
   })
 
-  return <>{reviews.length > 0 ? renderedReviews : <span>No Reviews.</span>}</>
+  return <>{reviews.length > 0 ? renderedReviews : <span>No reviews.</span>}</>
 }
