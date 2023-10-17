@@ -70,16 +70,14 @@ export default function LogIn() {
       const token = res.data.token
       localStorage.setItem('token', token)
       console.log(token)
-      const { data } = await axios
-        .get(`https://cinefindapi.vercel.app/auth/profile`, {
+      const { data } = await axios.get(
+        `https://cinefindapi.vercel.app/auth/profile`,
+        {
           headers: {
             Authorization: `${token}`,
           },
-        })
-        .then((res) => {
-          console.log('get profile', res)
-        })
-        .catch((e) => console.log(e))
+        }
+      )
 
       setUser(data)
       navigate('/') // navigate to previous page
