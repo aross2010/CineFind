@@ -165,6 +165,7 @@ export default function ListCreate() {
                 <Draggable
                   key={film.tmdbID}
                   draggableId={film.title}
+                  bounds="parent"
                   scroll={{ x: 0, y: 200 }}
                   index={index}
                 >
