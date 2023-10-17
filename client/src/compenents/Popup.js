@@ -15,11 +15,11 @@ export default function Popup() {
     }
 
     if (popup.active) {
-      const newtimer = setTimeout(() => {
-        setPopup({ ...popup, active: false })
-      }, 3000)
-
-      setTimer(newtimer)
+      setTimer(
+        setTimeout(() => {
+          setPopup({ ...popup, active: false })
+        }, 3000)
+      )
     }
   }, [popup])
   return ReactDOM.createPortal(
