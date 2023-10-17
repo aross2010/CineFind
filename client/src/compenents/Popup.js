@@ -10,6 +10,7 @@ export default function Popup() {
   const [timer, setTimer] = useState(null)
 
   useEffect(() => {
+    console.log('new popup')
     if (timer) {
       clearTimeout(timer)
     }
