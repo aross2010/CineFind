@@ -173,8 +173,8 @@ export default function UserPage() {
             {`${
               percentRight(userData.game.easy) === 'N/A'
                 ? 'N/A'
-                : percentRight(userData.game.easy)
-            }%`}
+                : `${percentRight(userData.game.easy)}%`
+            }`}
           </CircularProgressLabel>
         </CircularProgress>
         <span>Easy</span>
@@ -193,8 +193,8 @@ export default function UserPage() {
             {`${
               percentRight(userData.game.medium) === 'N/A'
                 ? 'N/A'
-                : percentRight(userData.game.medium)
-            }%`}
+                : `${percentRight(userData.game.medium)}%`
+            }`}
           </CircularProgressLabel>
         </CircularProgress>
         <span>Medium</span>
@@ -213,8 +213,8 @@ export default function UserPage() {
             {`${
               percentRight(userData.game.hard) === 'N/A'
                 ? 'N/A'
-                : percentRight(userData.game.hard)
-            }%`}
+                : `${percentRight(userData.game.hard)}%`
+            }`}
           </CircularProgressLabel>
         </CircularProgress>
         <span>Hard</span>
