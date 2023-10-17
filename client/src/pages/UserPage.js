@@ -151,6 +151,7 @@ export default function UserPage() {
   )
 
   const percentRight = (mode) => {
+    if (mode.length.correct + mode.length.incorrect === 0) return 0
     return (
       (mode.correct.length / mode.correct.length + mode.incorrect.length) *
       100
