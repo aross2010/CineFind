@@ -331,7 +331,7 @@ p {
 }
 
 ::-webkit-scrollbar {
-  width: 0.5rem;
+  width: 0.35rem;
 }
 
 ::-webkit-scrollbar-track {
