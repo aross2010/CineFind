@@ -140,8 +140,13 @@ function Find() {
               />
             </div>
 
-            {width > 600 && (
+            {width > 600 && !isLandingPage && (
               <div className="sort-filter-container">
+                <Sort
+                  sort={sort}
+                  setSort={setSort}
+                  handleSort={handleSort}
+                />
                 <Filters />
               </div>
             )}
