@@ -43,8 +43,13 @@ function FilmPage() {
   })
 
   useEffect(() => {
+    console.log(film)
+  }, [film])
+
+  useEffect(() => {
     setLoading(true)
     fetchDetails(id, setFilm, setReviews, setDiscussions, setLists)
+    setLoading(false)
   }, [id])
 
   useLayoutEffect(() => {
