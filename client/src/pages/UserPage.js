@@ -170,7 +170,11 @@ export default function UserPage() {
           trackColor="var(--alt-dark)"
         >
           <CircularProgressLabel fontSize="1.1rem">
-            {`${percentRight(userData.game.easy)}%`}
+            {`${
+              percentRight(userData.game.easy) === 0
+                ? 'O'
+                : percentRight(userData.game.easy)
+            }%`}
           </CircularProgressLabel>
         </CircularProgress>
         <span>Easy</span>
@@ -186,7 +190,11 @@ export default function UserPage() {
           trackColor="var(--alt-dark)"
         >
           <CircularProgressLabel fontSize="1.1rem">
-            {`${percentRight(userData.game.medium)}%`}
+            {`${
+              percentRight(userData.game.medium) === 0
+                ? 'O'
+                : percentRight(userData.game.medium)
+            }%`}
           </CircularProgressLabel>
         </CircularProgress>
         <span>Medium</span>
@@ -202,7 +210,11 @@ export default function UserPage() {
           trackColor="var(--alt-dark)"
         >
           <CircularProgressLabel fontSize="1.1rem">
-            {`${percentRight(userData.game.hard)}%`}
+            {`${
+              percentRight(userData.game.hard) === 0
+                ? 'O'
+                : percentRight(userData.game.hard)
+            }%`}
           </CircularProgressLabel>
         </CircularProgress>
         <span>Hard</span>

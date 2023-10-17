@@ -135,6 +135,11 @@
   opacity: 0;
 }
 
+.game-paage .preview-container {
+  border-left: 1px solid var(--blue-dark);
+  border-right: 1px solid var(--blue-dark);
+}
+
 .rank-display {
   width: 3rem;
   display: flex;
