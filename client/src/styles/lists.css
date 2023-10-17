@@ -372,7 +372,7 @@ input[type='number']::-webkit-outer-spin-button {
 @media (max-width: 1175px) {
   .create-list-container,
   .lists-container {
-    padding: 0 1.5rem;
+    padding: 0 1rem;
   }
 }
 

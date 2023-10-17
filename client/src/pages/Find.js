@@ -113,7 +113,7 @@ function Find() {
       >
         <div
           className="main-container"
-          style={width <= 1175 ? { padding: '0 1.5rem' } : { padding: 0 }}
+          style={width <= 1175 ? { padding: '0 1rem' } : { padding: 0 }}
         >
           <div
             className="query-container"

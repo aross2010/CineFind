@@ -608,7 +608,7 @@ textarea::placeholder {
 
 @media (max-width: 1175px) {
   .details-page {
-    padding: 0 1.5rem;
+    padding: 0 1rem;
   }
 }
 
@@ -623,7 +623,7 @@ textarea::placeholder {
 
   .details-page {
     justify-content: flex-start;
-    padding: 0 1.5rem;
+    padding: 0 1rem;
   }
 }
 

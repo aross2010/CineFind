@@ -150,24 +150,26 @@ export default function UserPage() {
     </div>
   )
 
+  const percentRight = (mode) => {
+    return (
+      (mode.correct.length / mode.correct.length + mode.incorrect.length) *
+      100
+    ).toFixed(1)
+  }
+
   const renderedStats = userData && (
     <>
       <div className="progress-container">
         <CircularProgress
           color="var(--green-alt)"
-          value={
-            userData.game.easy.correct.length +
-            userData.game.easy.incorrect.length
-          }
+          value={percentRight(userData.game.easy)}
           thickness="0.35rem"
           size="5.5rem"
           fontSize="0rem"
           trackColor="var(--alt-dark)"
         >
-          <CircularProgressLabel fontSize="1.25rem">
-            {userData.game.easy.correct.length +
-              userData.game.easy.incorrect.length}
-            %
+          <CircularProgressLabel fontSize="1.1rem">
+            {`${percentRight(userData.game.easy)}%`}
           </CircularProgressLabel>
         </CircularProgress>
         <span>Easy</span>
@@ -176,19 +178,14 @@ export default function UserPage() {
       <div className="progress-container">
         <CircularProgress
           color="var(--yellow-alt)"
-          value={
-            userData.game.medium.correct.length +
-            userData.game.medium.incorrect.length
-          }
+          value={percentRight(userData.game.medium)}
           thickness="0.35rem"
           size="5.5rem"
           fontSize="0rem"
           trackColor="var(--alt-dark)"
         >
-          <CircularProgressLabel fontSize="1.25rem">
-            {userData.game.medium.correct.length +
-              userData.game.medium.incorrect.length}
-            %
+          <CircularProgressLabel fontSize="1.1rem">
+            {`${percentRight(userData.game.medium)}%`}
           </CircularProgressLabel>
         </CircularProgress>
         <span>Medium</span>
@@ -197,19 +194,14 @@ export default function UserPage() {
       <div className="progress-container">
         <CircularProgress
           color="var(--red-alt)"
-          value={
-            userData.game.hard.correct.length +
-            userData.game.hard.incorrect.length
-          }
+          value={percentRight(userData.game.hard)}
           thickness="0.35rem"
           size="5.5rem"
           fontSize="0rem"
           trackColor="var(--alt-dark)"
         >
-          <CircularProgressLabel fontSize="1.25rem">
-            {userData.game.hard.correct.length +
-              userData.game.hard.incorrect.length}
-            %
+          <CircularProgressLabel fontSize="1.1rem">
+            {`${percentRight(userData.game.hard)}%`}
           </CircularProgressLabel>
         </CircularProgress>
         <span>Hard</span>

@@ -8,7 +8,6 @@ export function UserContextProvider({ children }) {
 
   const fetchUser = async () => {
     const token = localStorage.getItem('token')
-    console.log(token)
     if (token) {
       await axios
         .get(`https://cinefindapi.vercel.app/auth/profile`, {

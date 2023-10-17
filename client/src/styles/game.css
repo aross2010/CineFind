@@ -4,7 +4,7 @@
 }
 @media (max-width: 650px) {
   .game-page {
-    padding: 0 1.5rem;
+    padding: 0 1rem;
   }
 }
 .game-container {
@@ -411,6 +411,6 @@
 
 @media (max-width: 1175px) {
   .game-hub-page {
-    padding: 0 1.5rem;
+    padding: 0 1rem;
   }
 }

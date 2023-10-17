@@ -1,5 +1,4 @@
 
 -> skeleton the data on home page and lists hub, game hub for stats
 -> look for other boostrap overrides
-
--> display sort
+-> dropdown option space between
