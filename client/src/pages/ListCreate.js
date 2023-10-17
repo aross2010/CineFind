@@ -153,7 +153,7 @@ export default function ListCreate() {
     >
       <Droppable
         droppableId="list"
-        scroll={{ x: 0, y: 20 }}
+        scroll={{ x: 0, y: 200 }}
       >
         {(provided) => (
           <ul
