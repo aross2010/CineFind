@@ -116,14 +116,14 @@ const renderGenres = (genres, filmsGuessed, correctGuesses, isWin) => {
       }
     }
     return (
-      <span
+      <li
         key={genre.id}
         className={`game-genre ${
           match ? 'match' : isWin === false ? 'no-match' : ''
         }`}
       >
         {match || isWin === false ? genre.name : '?'}
-      </span>
+      </li>
     )
   })
 }
@@ -143,7 +143,7 @@ const renderCast = (cast, filmsGuessed, correctGuesses, isWin) => {
     }
 
     return (
-      <div
+      <li
         className="game-cast-member-container"
         key={member.id}
       >
@@ -163,7 +163,7 @@ const renderCast = (cast, filmsGuessed, correctGuesses, isWin) => {
             ? '-'
             : 'N-B'}
         </span>
-      </div>
+      </li>
     )
   })
 }

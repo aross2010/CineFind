@@ -21,7 +21,7 @@
   aspect-ratio: 2/3;
   overflow: hidden;
   border-radius: var(--rounded-square);
-  border: 1px solid var(--third-dark);
+  border: 1px solid var(--secondary-text);
 }
 
 .unknown-name {
@@ -111,8 +111,7 @@
 }
 
 .question-modal-container ul {
-  padding-left: 1rem;
-  list-style-type: circle;
+  padding-left: 0;
   font-weight: 400;
   color: var(--grey-text);
 }
@@ -171,6 +170,21 @@
   margin-left: 1rem;
 }
 
+.game-guessed-container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 100%;
+  border-top: 1px solid var(--blue-dark);
+  border-bottom: 1px solid var(--blue-dark);
+  border-radius: 0.3rem;
+}
+
+.game-container .preview-container {
+  border-left: 1px solid var(--blue-dark);
+  border-right: 1px solid var(--blue-dark);
+}
+
 .guessed-list li {
   padding: 0.5rem 0;
 }
@@ -203,6 +217,7 @@
 .game-cast-member-container {
   display: flex;
   align-items: center;
+  margin-bottom: 0.5rem;
 }
 
 .game-cast-gender {

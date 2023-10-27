@@ -10,7 +10,9 @@ const {
   deleteReview,
 } = require('../controllers/reviews')
 
-router.post('/', createReview)
+const verifyToken = require('../middleware/verifyToken')
+
+router.post('/', verifyToken, createReview)
 
 router.get('/', getAllReviews)
 
@@ -18,8 +20,8 @@ router.get('/film/:filmid', getFilmReviews)
 
 router.get('/user/:username', getUserReviews)
 
-router.put('/:id', updateReview)
+router.put('/:id', verifyToken, updateReview)
 
-router.delete('/:id', deleteReview)
+router.delete('/:id', verifyToken, deleteReview)
 
 module.exports = router

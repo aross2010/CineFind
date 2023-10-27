@@ -3,7 +3,8 @@ const { UserModel } = require('../models/User')
 
 const createDiscussion = async (req, res) => {
   const data = req.body
-  const { film, title, body, created, user } = data
+  const { film, title, body, created } = data
+  const user = req.user
 
   try {
     const discussionUser = await UserModel.findById(user._id).exec()

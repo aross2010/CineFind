@@ -1,68 +1,20 @@
-import React, { useContext, useEffect, useState } from 'react'
 import AppRoutes from './AppRoutes'
 import './styles/style.css'
-import Navbar from './compenents/Navbar'
-import Footer from './compenents/Footer'
-import Popup from './compenents/Popup'
-import Loading from './compenents/LoadingSpinner'
-import { UserContext } from './context/userContext'
-import useWindowSizeHook from './hooks/widowSizeHook'
+import Navbar from './compenents/navbar/Navbar'
+import Footer from './compenents/multipurpose/Footer'
+import Popup from './compenents/multipurpose/Popup'
 
-import './styles/style.css'
-import './styles/cast.css'
-import './styles/checkbox.css'
-import './styles/details.css'
-import './styles/dropdown.css'
-import './styles/find.css'
-import './styles/footer.css'
-import './styles/game.css'
-import './styles/lists.css'
-import './styles/login.css'
-import './styles/modal.css'
-import './styles/navbar.css'
-import './styles/popup.css'
-import './styles/profile-icon.css'
-import './styles/review.css'
-import './styles/switchable.css'
-import './styles/textInput.css'
-import './styles/user.css'
-import './styles/year-slider.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-export const AppContext = React.createContext()
-
 function App() {
-  const { user } = useContext(UserContext)
-  const { width } = useWindowSizeHook()
-  const [userLoaded, setUserLoaded] = useState(null)
-
-  useEffect(() => {
-    document.body.style.background =
-      '#14181c url(https://s.ltrbxd.com/static/img/content-bg.0d9a0f0f.png) 0 -1px repeat-x'
-  }, [])
-
-  useEffect(() => {
-    if (user !== undefined) setUserLoaded(true)
-  }, [user])
-
   return (
     <>
-      <div style={{ minHeight: '100vh' }}>
-        <Navbar />
-        <div
-          className="base-container"
-          style={width < 1175 ? { overflowX: 'hidden' } : {}}
-        >
-          {!userLoaded && window.location.pathname !== '/' ? (
-            <Loading />
-          ) : (
-            <AppRoutes />
-          )}
-          <Popup />
-        </div>
-      </div>
-
+      <Navbar />
+      <main>
+        <AppRoutes />
+      </main>
       <Footer />
+      <Popup />
     </>
   )
 }

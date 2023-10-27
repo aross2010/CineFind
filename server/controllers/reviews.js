@@ -3,14 +3,15 @@ const { UserModel } = require('../models/User')
 
 const createReview = async (req, res) => {
   const data = req.body
-  const { film, rating, body, created, user, updated } = data
+  const { film, rating, body, created, updated } = data
+  const user = req.user
 
   const reviewUser = await UserModel.findById(user._id).exec()
 
   if (!reviewUser)
     return res
-      .status(400)
-      .json({ error: 'Must be a valid user to create a review.' })
+      .status(401)
+      .json({ error: 'No aurhorized: Must be logged in to create review.' })
 
   if (!body)
     return res.status(400).json({ error: 'You must provide a review.' })

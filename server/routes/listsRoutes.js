@@ -12,7 +12,9 @@ const {
   getAllLists,
 } = require('../controllers/lists')
 
-router.post('/', createList)
+const verifyToken = require('../middleware/verifyToken')
+
+router.post('/', verifyToken, createList)
 
 router.get('/', getAllLists)
 
@@ -24,8 +26,8 @@ router.get('/user/:username', getUserLists)
 
 router.get('/user/:username/own', getOwnLists)
 
-router.put('/:id', updateList)
+router.put('/:id', verifyToken, updateList)
 
-router.delete('/:id', deleteList)
+router.delete('/:id', verifyToken, deleteList)
 
 module.exports = router

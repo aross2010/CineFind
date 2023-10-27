@@ -43,6 +43,7 @@
   grid-template-columns: repeat(5, minmax(0rem, 1fr));
   gap: 0.75rem;
   justify-items: center;
+  padding-left: 0;
 }
 
 .job-header {
@@ -117,6 +118,7 @@
   font-size: 0.95rem;
   color: var(--grey-text);
   margin-bottom: 1.5rem;
+  padding-left: 0;
 }
 
 @media (max-width: 900px) {

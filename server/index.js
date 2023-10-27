@@ -14,12 +14,15 @@ const authRoutes = require('./routes/authRoutes')
 const likeRoutes = require('./routes/likeRoutes')
 const userRoutes = require('./routes/userRoutes')
 const gameRoutes = require('./routes/gameRoutes')
-// middleware
 
 app.use(express.json())
 app.use(cookieParser())
 app.use(express.urlencoded({ extended: false }))
-app.use(cors())
+app.use(
+  cors({
+    origin: 'https://cinefind.vercel.app',
+  })
+)
 
 mongoose.connect(process.env.MONGO_URL).then(() => console.log('Connected.'))
 
@@ -40,7 +43,7 @@ app.use('/user', userRoutes)
 app.use('/game', gameRoutes)
 
 app.get('/', (req, res) => {
-  res.json('yo')
+  res.json('cinefind.')
 })
 
 app.listen(2000, () => console.log('Server Running...'))

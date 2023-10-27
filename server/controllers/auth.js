@@ -82,7 +82,9 @@ const loginUser = async (req, res) => {
     const user = await UserModel.findOne({ name: username })
 
     if (!user) {
-      return res.json({ error: 'No user found with that username.' })
+      return res
+        .status(404)
+        .json({ error: 'No user found with that username.' })
     }
 
     const match = await comparePassword(password, user.password)
@@ -111,8 +113,6 @@ const getProfile = async (req, res) => {
   } catch (e) {
     res.status(401).json({ error: 'Not Authorized.' })
   }
-
-  // retrieve cookie and user data for front end
 }
 
 module.exports = { registerUser, loginUser, getProfile }
