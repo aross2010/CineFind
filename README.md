@@ -5,7 +5,7 @@
 
 ## About
 
-CineFind is a movie-hub web application, where users can interact with members of the film community to enjoy film.
+CineFind is a movie-hub web application, where users can interact with members of the film community to enjoy film together.
 
 Here's what it does: 
 
